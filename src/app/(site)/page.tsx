@@ -25,6 +25,14 @@ type Post = {
   publishedAt: string;
 }
 
+type Guide = {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  icon?: string;
+  summary?: string;
+}
+
 export default async function Home() {
   const posts: Post[] = await client.fetch(`
     *[_type == "post"] | order(publishedAt desc) {
@@ -37,6 +45,30 @@ export default async function Home() {
       publishedAt
     }
   `)
+
+  const guides: Guide[] = await client.fetch(`
+    *[_type == "guide"] | order(publishedAt desc)[0...3] {
+      _id,
+      title,
+      slug,
+      icon,
+      summary
+    }
+  `)
+
+  // Mapa de ícones
+  const IconMap: Record<string, any> = {
+    BookOpen,
+    GraduationCap,
+    Brain,
+  }
+
+  // Cores dinâmicas para os cards (como estava no mockup)
+  const colors = [
+    { text: "text-[var(--primary)]", bg: "bg-[var(--primary)]/10" },
+    { text: "text-[var(--secondary)]", bg: "bg-[var(--secondary)]/10" },
+    { text: "text-[var(--foreground)]", bg: "bg-[var(--foreground)]/10" },
+  ]
 
   return (
     <div className="bg-[var(--background)] min-h-screen">
@@ -106,44 +138,30 @@ export default async function Home() {
         <section id="guias-de-estudo" className="max-w-7xl mx-auto px-4 md:px-10 mt-32 mb-20 scroll-mt-32">
           <div className="flex items-center justify-between mb-12">
             <h2 className="text-4xl font-black tracking-tight text-[var(--foreground)]">Study Guides</h2>
-            <Link href="/guias" className="hidden sm:flex items-center gap-2 text-sm font-bold text-[var(--primary)] hover:underline">
+            <Link href="/guides" className="hidden sm:flex items-center gap-2 text-sm font-bold text-[var(--primary)] hover:underline">
               View all <ArrowRight size={16} />
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
-            {/* Guia 1 */}
-            <Link href="/guias/como-estudar-para-o-enem" className="group p-8 rounded-[24px] bg-[var(--surface)] border border-[var(--surface-border)] hover:border-[var(--primary)] transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative overflow-hidden">
-              <div className="w-12 h-12 rounded-xl bg-[var(--primary)]/10 text-[var(--primary)] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <BookOpen size={24} />
-              </div>
-              <h3 className="text-xl font-bold mb-3 group-hover:text-[var(--primary)] transition-colors">How to Study for ENEM</h3>
-              <p className="text-[var(--foreground)]/60 text-sm font-serif leading-relaxed">
-                Complete schedule, review methods, and the most common subjects in the exam.
-              </p>
-            </Link>
-
-            {/* Guia 2 */}
-            <Link href="/guias/guia-do-sisu" className="group p-8 rounded-[24px] bg-[var(--surface)] border border-[var(--surface-border)] hover:border-[var(--primary)] transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative overflow-hidden">
-              <div className="w-12 h-12 rounded-xl bg-[var(--secondary)]/10 text-[var(--secondary)] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <GraduationCap size={24} />
-              </div>
-              <h3 className="text-xl font-bold mb-3 group-hover:text-[var(--primary)] transition-colors">SISU Strategies</h3>
-              <p className="text-[var(--foreground)]/60 text-sm font-serif leading-relaxed">
-                Learn how to calculate your chances and choose the best college and course options.
-              </p>
-            </Link>
-
-            {/* Guia 3 */}
-            <Link href="/guias/tecnicas-de-memorizacao" className="group p-8 rounded-[24px] bg-[var(--surface)] border border-[var(--surface-border)] hover:border-[var(--primary)] transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative overflow-hidden">
-              <div className="w-12 h-12 rounded-xl bg-[var(--foreground)]/10 text-[var(--foreground)] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Brain size={24} />
-              </div>
-              <h3 className="text-xl font-bold mb-3 group-hover:text-[var(--primary)] transition-colors">Memorization Techniques</h3>
-              <p className="text-[var(--foreground)]/60 text-sm font-serif leading-relaxed">
-                Discover how to retain complex information and never suffer from blanks during exams again.
-              </p>
-            </Link>
+            {guides.length > 0 ? guides.map((guide, index) => {
+              const IconComponent = guide.icon && IconMap[guide.icon] ? IconMap[guide.icon] : BookOpen
+              const color = colors[index % colors.length]
+              
+              return (
+                <Link key={guide._id} href={`/guides/${guide.slug.current}`} className="group p-8 rounded-[24px] bg-[var(--surface)] border border-[var(--surface-border)] hover:border-[var(--primary)] transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative overflow-hidden">
+                  <div className={`w-12 h-12 rounded-xl ${color.bg} ${color.text} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                    <IconComponent size={24} />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-[var(--primary)] transition-colors">{guide.title}</h3>
+                  <p className="text-[var(--foreground)]/60 text-sm font-serif leading-relaxed">
+                    {guide.summary || "Complete schedule, review methods, and the most common subjects in the exam."}
+                  </p>
+                </Link>
+              )
+            }) : (
+              <p className="text-[var(--foreground)]/60 col-span-full">No study guides published yet.</p>
+            )}
 
           </div>
         </section>

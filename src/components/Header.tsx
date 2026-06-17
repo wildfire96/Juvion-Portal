@@ -33,8 +33,8 @@ export function Header() {
                 Home
               </Link>
               <Link 
-                href="/guias" 
-                className={`text-sm transition-all duration-300 ${pathname.startsWith('/guias') ? 'font-bold text-[var(--primary)] border-b-2 border-[var(--primary)] pb-1' : 'font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)]'}`}
+                href="/guides" 
+                className={`text-sm transition-all duration-300 ${pathname.startsWith('/guides') ? 'font-bold text-[var(--primary)] border-b-2 border-[var(--primary)] pb-1' : 'font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)]'}`}
               >
                 Study Guides
               </Link>
@@ -45,8 +45,8 @@ export function Header() {
                 For Business
               </Link>
               <Link 
-                href="/sobre" 
-                className={`text-sm transition-all duration-300 ${pathname.startsWith('/sobre') ? 'font-bold text-[var(--primary)] border-b-2 border-[var(--primary)] pb-1' : 'font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)]'}`}
+                href="/about" 
+                className={`text-sm transition-all duration-300 ${pathname.startsWith('/about') ? 'font-bold text-[var(--primary)] border-b-2 border-[var(--primary)] pb-1' : 'font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)]'}`}
               >
                 About Us
               </Link>
@@ -101,9 +101,9 @@ export function Header() {
               Home
             </Link>
             <Link 
-              href="/guias" 
+              href="/guides" 
               onClick={() => setIsMobileMenuOpen(false)}
-              className={`text-2xl font-bold transition-all ${pathname.startsWith('/guias') ? 'text-[var(--primary)]' : 'text-[var(--foreground)]'}`}
+              className={`text-2xl font-bold transition-all ${pathname.startsWith('/guides') ? 'text-[var(--primary)]' : 'text-[var(--foreground)]'}`}
             >
               Study Guides
             </Link>
@@ -115,9 +115,9 @@ export function Header() {
               For Business
             </Link>
             <Link 
-              href="/sobre" 
+              href="/about" 
               onClick={() => setIsMobileMenuOpen(false)}
-              className={`text-2xl font-bold transition-all ${pathname.startsWith('/sobre') ? 'text-[var(--primary)]' : 'text-[var(--foreground)]'}`}
+              className={`text-2xl font-bold transition-all ${pathname.startsWith('/about') ? 'text-[var(--primary)]' : 'text-[var(--foreground)]'}`}
             >
               About Us
             </Link>

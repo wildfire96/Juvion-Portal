@@ -18,7 +18,7 @@ export function Footer() {
             <a className="text-sm font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)] transition-colors" href="#">
               Terms of Use
             </a>
-            <a className="text-sm font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)] transition-colors" href="#">
+            <a className="text-sm font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)] transition-colors" href="/about">
               Business Contact
             </a>
           </div>
