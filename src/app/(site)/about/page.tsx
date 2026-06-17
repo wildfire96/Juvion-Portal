@@ -1,91 +1,125 @@
 import { Header } from "@/components/Header"
 import { Footer } from "@/components/Footer"
 import { ScrollToTopButton } from "@/components/ScrollToTopButton"
-import { Shield, Target, Zap, Globe } from "lucide-react"
+import Image from "next/image"
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen flex flex-col bg-[var(--background)]">
       <Header />
       
-      <main className="flex-grow pt-32 pb-24">
+      <main className="flex-grow pt-32 pb-32">
         {/* HERO SECTION */}
-        <section className="max-w-7xl mx-auto px-6 lg:px-8 mb-32">
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--primary)]/10 text-[var(--primary)] w-fit mb-8 border border-[var(--primary)]/20">
-            <Globe className="w-4 h-4" />
-            <span className="text-xs font-bold tracking-widest uppercase">Our Mission</span>
-          </div>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tight text-[var(--foreground)] mb-8 leading-tight max-w-4xl">
-            Democratizing <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)]">education</span> through truth and transparency.
+        <section className="max-w-7xl mx-auto px-6 lg:px-8 pt-20 pb-32">
+          <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-black tracking-tighter text-[var(--foreground)] mb-10 leading-[0.9]">
+            Juvion.
           </h1>
-          <p className="text-xl md:text-2xl text-[var(--foreground)]/70 font-serif leading-relaxed max-w-3xl">
-            Juvion was born to end the confusion. We evaluate universities rigorously so you can decide your future with absolute certainty. No hidden fees, no misleading ads.
+          <p className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--foreground)]/80 max-w-4xl leading-[1.1]">
+            Democratizing knowledge through technology.
           </p>
         </section>
 
-        {/* BENTO GRID - VALUES */}
-        <section className="max-w-7xl mx-auto px-6 lg:px-8 mb-32">
-          <h2 className="text-3xl font-black text-[var(--foreground)] mb-12">What drives us</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-10 rounded-[32px] bg-[var(--surface)] border border-[var(--surface-border)] shadow-xl relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--primary)]/5 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
-              <Shield className="w-12 h-12 text-[var(--primary)] mb-8" />
-              <h3 className="text-2xl font-bold mb-4 text-[var(--foreground)]">Independence</h3>
-              <p className="text-[var(--foreground)]/60 font-serif leading-relaxed">
-                We are not controlled by any educational group. Our reviews reflect the reality of the institutions, prioritizing the student's perspective above all.
+        <div className="w-full h-px bg-[var(--foreground)]/10 my-10 max-w-7xl mx-auto" />
+
+        {/* MISSION & PRESENCE */}
+        <section className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+            <div>
+              <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-[var(--foreground)]/50 mb-6">Our Mission</h2>
+              <p className="text-3xl md:text-4xl font-serif leading-tight text-[var(--foreground)]">
+                To bring information solutions and accessible university options to the public, ensuring that every student makes the right choice for their future without barriers.
               </p>
             </div>
-
-            <div className="p-10 rounded-[32px] bg-[var(--surface)] border border-[var(--surface-border)] shadow-xl relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--secondary)]/5 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
-              <Target className="w-12 h-12 text-[var(--secondary)] mb-8" />
-              <h3 className="text-2xl font-bold mb-4 text-[var(--foreground)]">Clarity</h3>
-              <p className="text-[var(--foreground)]/60 font-serif leading-relaxed">
-                We eliminate academic jargon. We present what truly matters: methodology, market value, real tuition fees, and career support.
-              </p>
-            </div>
-
-            <div className="p-10 rounded-[32px] bg-gradient-to-br from-gray-900 to-black text-white border border-gray-800 shadow-xl relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
-              <Zap className="w-12 h-12 text-yellow-400 mb-8" />
-              <h3 className="text-2xl font-bold mb-4">Impact</h3>
-              <p className="text-white/70 font-serif leading-relaxed">
-                We believe that the right choice of college can change a family's trajectory. We exist to ensure that this choice is accurate.
-              </p>
+            <div>
+              <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-[var(--foreground)]/50 mb-6">Global Presence</h2>
+              <div className="grid grid-cols-2 gap-8 border-l border-[var(--foreground)]/10 pl-8">
+                <div>
+                  <h3 className="text-5xl font-black text-[var(--foreground)] mb-2 tracking-tighter">US</h3>
+                  <p className="text-[var(--foreground)]/60 font-medium">United States</p>
+                </div>
+                <div>
+                  <h3 className="text-5xl font-black text-[var(--foreground)] mb-2 tracking-tighter">UK</h3>
+                  <p className="text-[var(--foreground)]/60 font-medium">United Kingdom</p>
+                </div>
+                <div>
+                  <h3 className="text-5xl font-black text-[var(--foreground)] mb-2 tracking-tighter">AU</h3>
+                  <p className="text-[var(--foreground)]/60 font-medium">Australia</p>
+                </div>
+                <div>
+                  <h3 className="text-5xl font-black text-[var(--foreground)] mb-2 tracking-tighter">CA</h3>
+                  <p className="text-[var(--foreground)]/60 font-medium">Canada</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* MANIFESTO / STORY */}
-        <section className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="bg-[var(--surface)] border border-[var(--surface-border)] rounded-[40px] p-10 md:p-20 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)]"></div>
+        <div className="w-full h-px bg-[var(--foreground)]/10 my-10 max-w-7xl mx-auto" />
+
+        {/* FOUNDER & JOURNEY */}
+        <section className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="lg:col-span-5">
+              <div className="relative w-full aspect-[4/5] bg-[var(--surface)] border border-[var(--surface-border)] overflow-hidden">
+                <Image 
+                  src="/joel-medina.jpg" 
+                  alt="Joel Medina - CEO of Juvion" 
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                />
+              </div>
+            </div>
+
+            <div className="lg:col-span-7 space-y-16">
               <div>
-                <h2 className="text-4xl md:text-5xl font-black text-[var(--foreground)] mb-8 tracking-tight">The Juvion Story</h2>
-                <div className="space-y-6 text-lg text-[var(--foreground)]/70 font-serif leading-[1.8]">
-                  <p>
-                    Choosing a college has always been a blind shot. You visit a beautiful website, talk to a trained salesperson, but only discover the reality after enrolling.
-                  </p>
-                  <p>
-                    Juvion emerged to change this dynamic. We gathered data, talked to students, and created a proprietary evaluation matrix that separates excellent institutions from those that just sell diplomas.
-                  </p>
-                  <p className="font-bold text-[var(--foreground)]">
-                    Today, we help thousands of students find their path in technology and business careers.
-                  </p>
+                <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-[var(--foreground)]/50 mb-6">Leadership</h2>
+                <h3 className="text-5xl font-black tracking-tight text-[var(--foreground)] mb-4">Joel Medina</h3>
+                <p className="text-xl text-[var(--foreground)]/60 font-medium mb-6">CEO & Founder, Business Administration Student</p>
+                <p className="text-xl font-serif leading-relaxed text-[var(--foreground)]/80 max-w-2xl">
+                  As a Business Administration student, Joel understood firsthand the complexity and lack of transparency in choosing an educational path. He founded Juvion to eliminate the guesswork, building a platform that provides absolute clarity and accessible university options worldwide.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-[var(--foreground)]/50 mb-6">The Journey</h2>
+                <div className="flex items-baseline gap-6">
+                  <h3 className="text-8xl font-black tracking-tighter text-[var(--foreground)]">2026</h3>
+                  <p className="text-2xl font-serif text-[var(--foreground)]/70">The year it all started.</p>
                 </div>
               </div>
-              <div className="bg-[var(--background)] rounded-3xl p-10 border border-[var(--surface-border)]">
-                <h3 className="text-xl font-bold text-[var(--foreground)] mb-6">Contact Us</h3>
-                <p className="text-[var(--foreground)]/60 mb-8">
-                  Whether for partnerships, suggestions, or doubts, our team is ready to help.
-                </p>
-                <a href="mailto:contato@juvion.com.br" className="inline-flex items-center justify-center w-full bg-[var(--primary)] text-white px-8 py-4 rounded-xl font-bold hover:bg-[var(--primary-hover)] transition-colors">
-                  Send an E-mail
-                </a>
-              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <div className="w-full h-px bg-[var(--foreground)]/10 my-10 max-w-7xl mx-auto" />
+
+        {/* CORE VALUES */}
+        <section className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+          <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-[var(--foreground)]/50 mb-16">Core Values</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-16">
+            <div className="border-t-2 border-[var(--foreground)] pt-6">
+              <h3 className="text-3xl font-black tracking-tight text-[var(--foreground)] mb-4">Radical Transparency</h3>
+              <p className="text-lg text-[var(--foreground)]/70 font-serif leading-relaxed">
+                We present the unvarnished truth about tuition, methodology, and institutional quality. No hidden fees, no obscured data.
+              </p>
+            </div>
+            
+            <div className="border-t-2 border-[var(--foreground)] pt-6">
+              <h3 className="text-3xl font-black tracking-tight text-[var(--foreground)] mb-4">Accessibility</h3>
+              <p className="text-lg text-[var(--foreground)]/70 font-serif leading-relaxed">
+                Knowledge should not be gated. We strive to bring accessible university and educational options to everyone, everywhere.
+              </p>
+            </div>
+
+            <div className="border-t-2 border-[var(--foreground)] pt-6">
+              <h3 className="text-3xl font-black tracking-tight text-[var(--foreground)] mb-4">Independence</h3>
+              <p className="text-lg text-[var(--foreground)]/70 font-serif leading-relaxed">
+                We are not controlled or influenced by any educational group. Our loyalty lies entirely with the student.
+              </p>
             </div>
           </div>
         </section>
