@@ -93,7 +93,7 @@ export default async function Home() {
                   </div>
                 </div>
               </Link>
-            ) : (
+            )) : (
               <p className="text-[var(--foreground)]/60 col-span-full">No reviews published yet. How about creating one in the Sanity dashboard?</p>
             )}
             
