@@ -7,14 +7,37 @@ export function NewsletterForm() {
   const [email, setEmail] = useState("")
   const [status, setStatus] = useState<"idle" | "loading" | "success">("idle")
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus("loading")
-    // Simula uma chamada à API de newsletter
-    setTimeout(() => {
-      setStatus("success")
-      setEmail("")
-    }, 1500)
+    
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+          subject: "New Newsletter Subscriber!",
+          email: email,
+          message: `New subscriber email: ${email}`
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setStatus("success")
+        setEmail("")
+      } else {
+        setStatus("idle")
+        alert("Something went wrong. Please try again.")
+      }
+    } catch (error) {
+      setStatus("idle")
+      alert("Something went wrong. Please try again.")
+    }
   }
 
   return (

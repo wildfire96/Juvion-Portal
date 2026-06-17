@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { Header } from "@/components/Header"
 import { ScrollToTopButton } from "@/components/ScrollToTopButton"
 import dynamic from "next/dynamic"
@@ -18,6 +19,43 @@ import {
 const Footer = dynamic(() => import("@/components/Footer").then(mod => mod.Footer))
 
 export default function EmpresasPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    jobTitle: "",
+    email: "",
+    company: "",
+    employees: ""
+  });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+          subject: "New B2B Partnership Request from Juvion",
+          ...formData,
+          message: `New Partnership Request:\n\nName: ${formData.name}\nTitle: ${formData.jobTitle}\nEmail: ${formData.email}\nCompany: ${formData.company}\nEmployees: ${formData.employees}`
+        }),
+      });
+      const result = await response.json();
+      if (result.success) {
+        setStatus("success");
+        setFormData({ name: "", jobTitle: "", email: "", company: "", employees: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      setStatus("error");
+    }
+  };
   return (
     <div className="min-h-screen flex flex-col bg-[var(--background)]">
       <Header />
@@ -232,65 +270,97 @@ export default function EmpresasPage() {
               <div className="bg-[var(--background)] p-8 md:p-10 rounded-3xl shadow-xl border border-[var(--surface-border)]">
                 <h3 className="text-2xl font-bold text-[var(--foreground)] mb-8">Partnership Registration</h3>
                 
-                <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                {status === "success" ? (
+                  <div className="text-center p-8">
+                    <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <CheckCircle className="w-8 h-8 text-green-500" />
+                    </div>
+                    <h4 className="text-xl font-bold text-[var(--foreground)] mb-2">Request Sent!</h4>
+                    <p className="text-[var(--foreground)]/70">Our team will contact you shortly.</p>
+                  </div>
+                ) : (
+                  <form className="space-y-5" onSubmit={handleSubmit}>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                      <div className="space-y-2">
+                        <label className="text-sm font-semibold text-[var(--foreground)]/80">Full Name</label>
+                        <input 
+                          type="text" 
+                          required
+                          value={formData.name}
+                          onChange={(e) => setFormData({...formData, name: e.target.value})}
+                          placeholder="João Silva"
+                          className="w-full px-4 py-3 rounded-xl border border-[var(--surface-border)] bg-[var(--surface)] text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent transition-all placeholder:text-[var(--foreground)]/30"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-sm font-semibold text-[var(--foreground)]/80">Job Title</label>
+                        <input 
+                          type="text" 
+                          required
+                          value={formData.jobTitle}
+                          onChange={(e) => setFormData({...formData, jobTitle: e.target.value})}
+                          placeholder="Ex: HR Director"
+                          className="w-full px-4 py-3 rounded-xl border border-[var(--surface-border)] bg-[var(--surface)] text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent transition-all placeholder:text-[var(--foreground)]/30"
+                        />
+                      </div>
+                    </div>
+
                     <div className="space-y-2">
-                      <label className="text-sm font-semibold text-[var(--foreground)]/80">Full Name</label>
+                      <label className="text-sm font-semibold text-[var(--foreground)]/80">Corporate Email</label>
                       <input 
-                        type="text" 
-                        placeholder="João Silva"
+                        type="email" 
+                        required
+                        value={formData.email}
+                        onChange={(e) => setFormData({...formData, email: e.target.value})}
+                        placeholder="joao@empresa.com.br"
                         className="w-full px-4 py-3 rounded-xl border border-[var(--surface-border)] bg-[var(--surface)] text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent transition-all placeholder:text-[var(--foreground)]/30"
                       />
                     </div>
+
                     <div className="space-y-2">
-                      <label className="text-sm font-semibold text-[var(--foreground)]/80">Job Title</label>
+                      <label className="text-sm font-semibold text-[var(--foreground)]/80">Company Name</label>
                       <input 
                         type="text" 
-                        placeholder="Ex: HR Director"
+                        required
+                        value={formData.company}
+                        onChange={(e) => setFormData({...formData, company: e.target.value})}
+                        placeholder="Empresa S/A"
                         className="w-full px-4 py-3 rounded-xl border border-[var(--surface-border)] bg-[var(--surface)] text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent transition-all placeholder:text-[var(--foreground)]/30"
                       />
                     </div>
-                  </div>
 
-                  <div className="space-y-2">
-                    <label className="text-sm font-semibold text-[var(--foreground)]/80">Corporate Email</label>
-                    <input 
-                      type="email" 
-                      placeholder="joao@empresa.com.br"
-                      className="w-full px-4 py-3 rounded-xl border border-[var(--surface-border)] bg-[var(--surface)] text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent transition-all placeholder:text-[var(--foreground)]/30"
-                    />
-                  </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-semibold text-[var(--foreground)]/80">Number of Employees</label>
+                      <select 
+                        required
+                        value={formData.employees}
+                        onChange={(e) => setFormData({...formData, employees: e.target.value})}
+                        className="w-full px-4 py-3 rounded-xl border border-[var(--surface-border)] bg-[var(--surface)] text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] transition-all"
+                      >
+                        <option value="" disabled className="text-[var(--foreground)]/50">Select a range</option>
+                        <option value="1-50">1 to 50</option>
+                        <option value="51-200">51 to 200</option>
+                        <option value="201-500">201 to 500</option>
+                        <option value="500+">More than 500</option>
+                      </select>
+                    </div>
 
-                  <div className="space-y-2">
-                    <label className="text-sm font-semibold text-[var(--foreground)]/80">Company Name</label>
-                    <input 
-                      type="text" 
-                      placeholder="Empresa S/A"
-                      className="w-full px-4 py-3 rounded-xl border border-[var(--surface-border)] bg-[var(--surface)] text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent transition-all placeholder:text-[var(--foreground)]/30"
-                    />
-                  </div>
+                    {status === "error" && (
+                      <p className="text-red-500 text-sm font-medium text-center">Something went wrong. Please try again.</p>
+                    )}
 
-                  <div className="space-y-2">
-                    <label className="text-sm font-semibold text-[var(--foreground)]/80">Number of Employees</label>
-                    <select defaultValue="" className="w-full px-4 py-3 rounded-xl border border-[var(--surface-border)] bg-[var(--surface)] text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] transition-all">
-                      <option value="" disabled className="text-[var(--foreground)]/50">Select a range</option>
-                      <option value="1-50">1 to 50</option>
-                      <option value="51-200">51 to 200</option>
-                      <option value="201-500">201 to 500</option>
-                      <option value="500+">More than 500</option>
-                    </select>
-                  </div>
-
-                  <button 
-                    type="submit"
-                    className="w-full mt-6 px-8 py-4 rounded-xl bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-white font-bold text-lg hover:opacity-90 transition-opacity shadow-lg shadow-blue-500/30"
-                  >
-                    Request Partnership
-                  </button>
-                  <p className="text-xs text-center text-[var(--foreground)]/50 mt-4">
-                    By requesting, you agree to our privacy terms and that we will contact you.
-                  </p>
-                </form>
+                    <button 
+                      type="submit"
+                      disabled={status === "loading"}
+                      className="w-full mt-6 px-8 py-4 rounded-xl bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-white font-bold text-lg hover:opacity-90 transition-opacity shadow-lg shadow-blue-500/30 disabled:opacity-70 disabled:cursor-not-allowed"
+                    >
+                      {status === "loading" ? "Sending Request..." : "Request Partnership"}
+                    </button>
+                    <p className="text-xs text-center text-[var(--foreground)]/50 mt-4">
+                      By requesting, you agree to our privacy terms and that we will contact you.
+                    </p>
+                  </form>
+                )}
               </div>
             </div>
 
