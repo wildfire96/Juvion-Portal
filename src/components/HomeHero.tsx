@@ -13,7 +13,7 @@ export function HomeHero() {
   const opacity = useTransform(scrollY, [0, 400], [1, 0])
 
   return (
-    <section className="relative w-full min-h-[100vh] md:min-h-[600px] md:h-[85vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] pt-32 pb-[100px] md:pt-20 md:pb-[50px]">
+    <section className="relative w-full min-h-[100vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] pt-32 pb-[100px] md:pt-32 md:pb-[50px]">
       
       {/* O texto JUVION gigante de background foi removido a pedido do usuário para um visual mais limpo */}
 
@@ -24,7 +24,7 @@ export function HomeHero() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="relative z-20 w-full max-w-7xl px-4 md:px-10 mx-auto"
       >
-        <div className="max-w-2xl">
+        <div className="max-w-2xl mt-12 md:mt-24">
           <span className="inline-block py-1.5 px-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold tracking-[0.2em] uppercase mb-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.4)]">
             Independent Portal
           </span>

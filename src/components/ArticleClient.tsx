@@ -29,7 +29,7 @@ export function ArticleClient({ post }: { post: any }) {
         {/* =========================================
             HERO SECTION 3D (DRENCHED STRATEGY)
             ========================================= */}
-        <section className="relative w-full h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] pt-20 pb-[50px]">
+        <section className="relative w-full min-h-[100vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] pt-20 pb-[50px]">
           
           {/* Camada 1: Background Layer (Huge Text Parallax) */}
           <motion.div 
@@ -58,22 +58,21 @@ export function ArticleClient({ post }: { post: any }) {
             </div>
           </motion.div>
 
-          {/* Camada 3: Imagem PNG com Fundo Transparente (Atrás do texto) */}
+          {/* Camada 3: Imagem PNG com Fundo Transparente (Atrás do texto) -> Agora ocupa todo o espaço */}
           {post.heroImage && (
             <motion.div 
               style={{ y: imageY }}
-              className="absolute bottom-0 z-10 w-full max-w-4xl flex justify-center md:justify-end md:right-10 pointer-events-none opacity-40 md:opacity-100"
+              className="absolute inset-0 z-0 w-full h-full pointer-events-none"
             >
-              <div className="relative w-auto h-[50vh] md:h-[65vh] aspect-[800/1000] drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                <Image 
-                  src={urlForImage(post.heroImage).url()} 
-                  alt={post.title} 
-                  fill
-                  priority
-                  sizes="(max-width: 768px) 100vw, 800px"
-                  className="object-contain"
-                />
-              </div>
+              <Image 
+                src={urlForImage(post.heroImage).url()} 
+                alt={post.title} 
+                fill
+                priority
+                sizes="100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30 backdrop-blur-[2px]" />
             </motion.div>
           )}
           
