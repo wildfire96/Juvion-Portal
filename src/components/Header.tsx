@@ -18,66 +18,68 @@ export function Header() {
   }, [])
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-[var(--surface-border)] transition-colors duration-300">
-      <nav className="flex justify-between items-center w-full px-4 md:px-10 py-4 max-w-7xl mx-auto">
-        <div className="flex items-center gap-8">
-          <Link href="/" className="text-3xl font-extrabold text-[var(--primary)] tracking-tight">
-            Juvion
-          </Link>
-          <div className="hidden md:flex gap-6">
-            <Link 
-              href="/" 
-              className={`text-sm transition-all duration-300 ${pathname === '/' ? 'font-bold text-[var(--primary)] border-b-2 border-[var(--primary)] pb-1' : 'font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)]'}`}
-            >
-              Início
+    <>
+      <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-[var(--surface-border)] transition-colors duration-300">
+        <nav className="flex justify-between items-center w-full px-4 md:px-10 py-4 max-w-7xl mx-auto">
+          <div className="flex items-center gap-8">
+            <Link href="/" className="text-3xl font-extrabold text-[var(--primary)] tracking-tight">
+              Juvion
             </Link>
-            <Link 
-              href="/guias" 
-              className={`text-sm transition-all duration-300 ${pathname.startsWith('/guias') ? 'font-bold text-[var(--primary)] border-b-2 border-[var(--primary)] pb-1' : 'font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)]'}`}
-            >
-              Guias de Estudo
-            </Link>
-            <Link 
-              href="/empresas" 
-              className={`text-sm transition-all duration-300 ${pathname.startsWith('/empresas') ? 'font-bold text-[var(--primary)] border-b-2 border-[var(--primary)] pb-1' : 'font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)]'}`}
-            >
-              Para Empresas
-            </Link>
-            <Link 
-              href="/sobre" 
-              className={`text-sm transition-all duration-300 ${pathname.startsWith('/sobre') ? 'font-bold text-[var(--primary)] border-b-2 border-[var(--primary)] pb-1' : 'font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)]'}`}
-            >
-              Sobre o Portal
-            </Link>
+            <div className="hidden md:flex gap-6">
+              <Link 
+                href="/" 
+                className={`text-sm transition-all duration-300 ${pathname === '/' ? 'font-bold text-[var(--primary)] border-b-2 border-[var(--primary)] pb-1' : 'font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)]'}`}
+              >
+                Início
+              </Link>
+              <Link 
+                href="/guias" 
+                className={`text-sm transition-all duration-300 ${pathname.startsWith('/guias') ? 'font-bold text-[var(--primary)] border-b-2 border-[var(--primary)] pb-1' : 'font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)]'}`}
+              >
+                Guias de Estudo
+              </Link>
+              <Link 
+                href="/empresas" 
+                className={`text-sm transition-all duration-300 ${pathname.startsWith('/empresas') ? 'font-bold text-[var(--primary)] border-b-2 border-[var(--primary)] pb-1' : 'font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)]'}`}
+              >
+                Para Empresas
+              </Link>
+              <Link 
+                href="/sobre" 
+                className={`text-sm transition-all duration-300 ${pathname.startsWith('/sobre') ? 'font-bold text-[var(--primary)] border-b-2 border-[var(--primary)] pb-1' : 'font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)]'}`}
+              >
+                Sobre o Portal
+              </Link>
+            </div>
           </div>
-        </div>
-        
-        <div className="flex items-center gap-4">
-          <button className="p-3 rounded-full hover:bg-[var(--surface-hover)] transition-colors text-[var(--foreground)]" aria-label="Pesquisar">
-            <Search size={20} />
-          </button>
-          {mounted && (
-            <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="p-3 rounded-full hover:bg-[var(--surface-hover)] transition-colors text-[var(--foreground)]"
-              aria-label="Alternar tema"
-            >
-              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+          
+          <div className="flex items-center gap-4">
+            <button className="p-3 rounded-full hover:bg-[var(--surface-hover)] transition-colors text-[var(--foreground)]" aria-label="Pesquisar">
+              <Search size={20} />
             </button>
-          )}
-          <button 
-            onClick={() => setIsMobileMenuOpen(true)}
-            className="md:hidden p-3 rounded-full hover:bg-[var(--surface-hover)] transition-colors text-[var(--foreground)]" 
-            aria-label="Abrir menu"
-          >
-            <Grip size={20} />
-          </button>
-        </div>
-      </nav>
+            {mounted && (
+              <button
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="p-3 rounded-full hover:bg-[var(--surface-hover)] transition-colors text-[var(--foreground)]"
+                aria-label="Alternar tema"
+              >
+                {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+              </button>
+            )}
+            <button 
+              onClick={() => setIsMobileMenuOpen(true)}
+              className="md:hidden p-3 rounded-full hover:bg-[var(--surface-hover)] transition-colors text-[var(--foreground)]" 
+              aria-label="Abrir menu"
+            >
+              <Grip size={20} />
+            </button>
+          </div>
+        </nav>
+      </header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Overlay - Movido para fora do header para não ser bloqueado pelo backdrop-filter */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-[100] bg-white dark:bg-[#0a0a0a] flex flex-col md:hidden animate-in fade-in duration-300">
+        <div className="fixed inset-0 z-[100] bg-[var(--background)] flex flex-col md:hidden animate-in fade-in duration-300">
           <div className="flex justify-between items-center w-full px-4 py-4">
             <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-extrabold text-[var(--primary)] tracking-tight">
               Juvion
@@ -122,6 +124,6 @@ export function Header() {
           </div>
         </div>
       )}
-    </header>
+    </>
   )
 }
