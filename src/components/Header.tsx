@@ -1,7 +1,7 @@
 "use client"
 
 import { useTheme } from "next-themes"
-import { Moon, Sun, Search } from "lucide-react"
+import { Moon, Sun, Search, Grip, X } from "lucide-react"
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -9,6 +9,7 @@ import { usePathname } from "next/navigation"
 export function Header() {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
 
   // Previne hydration mismatch
@@ -52,20 +53,75 @@ export function Header() {
         </div>
         
         <div className="flex items-center gap-4">
-          <button className="p-2 rounded-full hover:bg-[var(--surface-hover)] transition-colors text-[var(--foreground)]" aria-label="Pesquisar">
+          <button className="p-3 rounded-full hover:bg-[var(--surface-hover)] transition-colors text-[var(--foreground)]" aria-label="Pesquisar">
             <Search size={20} />
           </button>
           {mounted && (
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="p-2 rounded-full hover:bg-[var(--surface-hover)] transition-colors text-[var(--foreground)]"
+              className="p-3 rounded-full hover:bg-[var(--surface-hover)] transition-colors text-[var(--foreground)]"
               aria-label="Alternar tema"
             >
               {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
             </button>
           )}
+          <button 
+            onClick={() => setIsMobileMenuOpen(true)}
+            className="md:hidden p-3 rounded-full hover:bg-[var(--surface-hover)] transition-colors text-[var(--foreground)]" 
+            aria-label="Abrir menu"
+          >
+            <Grip size={20} />
+          </button>
         </div>
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 z-[100] bg-[var(--background)] flex flex-col md:hidden animate-in fade-in duration-300">
+          <div className="flex justify-between items-center w-full px-4 py-4">
+            <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-extrabold text-[var(--primary)] tracking-tight">
+              Juvion
+            </Link>
+            <button 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="p-3 rounded-full hover:bg-[var(--surface-hover)] transition-colors text-[var(--foreground)]" 
+              aria-label="Fechar menu"
+            >
+              <X size={24} />
+            </button>
+          </div>
+          <div className="flex flex-col gap-6 p-8 mt-10">
+            <Link 
+              href="/" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`text-2xl font-bold transition-all ${pathname === '/' ? 'text-[var(--primary)]' : 'text-[var(--foreground)]'}`}
+            >
+              Início
+            </Link>
+            <Link 
+              href="/guias" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`text-2xl font-bold transition-all ${pathname.startsWith('/guias') ? 'text-[var(--primary)]' : 'text-[var(--foreground)]'}`}
+            >
+              Guias de Estudo
+            </Link>
+            <Link 
+              href="/empresas" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`text-2xl font-bold transition-all ${pathname.startsWith('/empresas') ? 'text-[var(--primary)]' : 'text-[var(--foreground)]'}`}
+            >
+              Para Empresas
+            </Link>
+            <Link 
+              href="/sobre" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`text-2xl font-bold transition-all ${pathname.startsWith('/sobre') ? 'text-[var(--primary)]' : 'text-[var(--foreground)]'}`}
+            >
+              Sobre o Portal
+            </Link>
+          </div>
+        </div>
+      )}
     </header>
   )
 }

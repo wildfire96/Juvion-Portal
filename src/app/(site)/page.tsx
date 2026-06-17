@@ -53,7 +53,7 @@ export default async function Home() {
             <h2 className="text-4xl font-black tracking-tight text-[var(--foreground)]">Últimas Análises</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.length > 0 ? posts.map((post) => (
+            {posts.length > 0 ? posts.map((post, index) => (
               <Link key={post._id} href={`/analise/${post.slug.current}`} className="group flex flex-col bg-[var(--surface)] border border-[var(--surface-border)] rounded-[24px] overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 relative">
                 {/* Inner glow trick */}
                 <div className="absolute inset-0 rounded-[24px] border border-white/50 dark:border-white/5 pointer-events-none z-10"></div>
@@ -63,6 +63,7 @@ export default async function Home() {
                     src={post.heroImage ? urlForImage(post.heroImage).url() : "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop"} 
                     alt={post.title} 
                     fill
+                    priority={index === 0}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
@@ -113,7 +114,7 @@ export default async function Home() {
             
             {/* Guia 1 */}
             <Link href="/guias/como-estudar-para-o-enem" className="group p-8 rounded-[24px] bg-[var(--surface)] border border-[var(--surface-border)] hover:border-[var(--primary)] transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative overflow-hidden">
-              <div className="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 rounded-xl bg-[var(--primary)]/10 text-[var(--primary)] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <BookOpen size={24} />
               </div>
               <h3 className="text-xl font-bold mb-3 group-hover:text-[var(--primary)] transition-colors">Como Estudar para o ENEM</h3>
@@ -124,7 +125,7 @@ export default async function Home() {
 
             {/* Guia 2 */}
             <Link href="/guias/guia-do-sisu" className="group p-8 rounded-[24px] bg-[var(--surface)] border border-[var(--surface-border)] hover:border-[var(--primary)] transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative overflow-hidden">
-              <div className="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 rounded-xl bg-[var(--secondary)]/10 text-[var(--secondary)] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <GraduationCap size={24} />
               </div>
               <h3 className="text-xl font-bold mb-3 group-hover:text-[var(--primary)] transition-colors">Estratégias para o SISU</h3>
@@ -135,7 +136,7 @@ export default async function Home() {
 
             {/* Guia 3 */}
             <Link href="/guias/tecnicas-de-memorizacao" className="group p-8 rounded-[24px] bg-[var(--surface)] border border-[var(--surface-border)] hover:border-[var(--primary)] transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative overflow-hidden">
-              <div className="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 rounded-xl bg-[var(--foreground)]/10 text-[var(--foreground)] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Brain size={24} />
               </div>
               <h3 className="text-xl font-bold mb-3 group-hover:text-[var(--primary)] transition-colors">Técnicas de Memorização</h3>

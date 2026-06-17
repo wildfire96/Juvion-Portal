@@ -33,6 +33,7 @@ export function NewsletterForm() {
           <input
             type="email"
             required
+            aria-label="Seu melhor e-mail"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Seu melhor e-mail"

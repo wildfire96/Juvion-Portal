@@ -13,17 +13,9 @@ export function HomeHero() {
   const opacity = useTransform(scrollY, [0, 400], [1, 0])
 
   return (
-    <section className="relative w-full h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] pt-20 pb-[50px]">
+    <section className="relative w-full min-h-[100vh] md:min-h-[600px] md:h-[85vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] pt-32 pb-[100px] md:pt-20 md:pb-[50px]">
       
-      {/* Camada 1: Background Layer (Huge Text Parallax) */}
-      <motion.div 
-        style={{ y: textY, opacity }}
-        className="absolute z-10 w-full h-full flex justify-center items-center pointer-events-none"
-      >
-        <h1 className="text-[18vw] leading-none font-black text-white/20 whitespace-nowrap tracking-tighter mix-blend-overlay select-none">
-          JUVION
-        </h1>
-      </motion.div>
+      {/* O texto JUVION gigante de background foi removido a pedido do usuário para um visual mais limpo */}
 
       {/* Camada 2: Título Legível */}
       <motion.div 
@@ -42,7 +34,7 @@ export function HomeHero() {
         <p className="text-white/80 text-lg md:text-xl font-serif max-w-xl mb-10 drop-shadow-md">
           Análises definitivas e transparentes das melhores faculdades EAD e presenciais de tecnologia.
         </p>
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mt-10">
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mt-10 pb-12 md:pb-0">
           <Link href="#analises" className="group bg-white text-black px-8 py-4 rounded-2xl font-black text-lg hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)] inline-flex items-center gap-4 shrink-0">
             Explorar Análises
             <div className="bg-black text-white p-1.5 rounded-xl group-hover:translate-x-1 transition-transform">
@@ -76,7 +68,7 @@ export function HomeHero() {
             src="/hero-image.webp" 
             alt="Estudante EAD interagindo com tecnologia" 
             fill
-            className="object-contain object-right-bottom"
+            className="object-cover object-center md:object-contain md:object-right-bottom"
             priority
             sizes="100vw"
           />

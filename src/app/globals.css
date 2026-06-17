@@ -10,7 +10,7 @@
   --color-surface-hover: var(--surface-hover);
   --color-surface-border: var(--surface-border);
   
-  --font-sans: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-merriweather), ui-serif, Georgia, serif;
 }
 

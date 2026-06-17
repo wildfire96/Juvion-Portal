@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Merriweather } from "next/font/google";
+import { Manrope, Merriweather } from "next/font/google";
 import "../globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
-const plusJakarta = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
   display: "swap",
 });
@@ -30,7 +30,7 @@ export default function RootLayout({
     <html
       lang="pt-BR"
       suppressHydrationWarning
-      className={`${plusJakarta.variable} ${merriweather.variable} antialiased scroll-smooth`}
+      className={`${manrope.variable} ${merriweather.variable} antialiased scroll-smooth`}
     >
       <body className="min-h-screen flex flex-col font-sans transition-colors duration-300">
         <ThemeProvider
