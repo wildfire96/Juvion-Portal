@@ -12,6 +12,9 @@ export function Footer() {
         </div>
         <div className="flex flex-col gap-6">
           <div className="flex flex-wrap gap-6">
+            <a className="text-sm font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)] transition-colors" href="https://instagram.com/ItsJuvion" target="_blank" rel="noopener noreferrer">
+              Instagram
+            </a>
             <a className="text-sm font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)] transition-colors" href="#">
               Privacy Policy
             </a>
