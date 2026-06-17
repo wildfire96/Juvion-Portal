@@ -77,7 +77,7 @@ export function Header() {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-[100] bg-[var(--background)] flex flex-col md:hidden animate-in fade-in duration-300">
+        <div className="fixed inset-0 z-[100] bg-white dark:bg-[#0a0a0a] flex flex-col md:hidden animate-in fade-in duration-300">
           <div className="flex justify-between items-center w-full px-4 py-4">
             <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-extrabold text-[var(--primary)] tracking-tight">
               Juvion
