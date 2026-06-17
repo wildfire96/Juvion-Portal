@@ -25,6 +25,17 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'seoTitle',
+      title: 'SEO Title (Tamanho ideal: 50-60 caracteres)',
+      type: 'string',
+    }),
+    defineField({
+      name: 'seoDescription',
+      title: 'SEO Description (Tamanho ideal: 150-160 caracteres)',
+      type: 'text',
+      rows: 2,
+    }),
+    defineField({
       name: 'courseOrCollegeName',
       title: 'Nome do Curso ou Faculdade',
       type: 'string',

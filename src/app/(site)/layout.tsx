@@ -17,8 +17,45 @@ const merriweather = Merriweather({
 });
 
 export const metadata: Metadata = {
-  title: "Juvion | Career and College Portal",
+  metadataBase: new URL("https://juvion.top"),
+  title: {
+    default: "Juvion | Accelerate your Online Career",
+    template: "%s | Juvion"
+  },
   description: "Find the ideal college, access study guides, and compare options with independent reviews.",
+  openGraph: {
+    title: "Juvion | Accelerate your Online Career",
+    description: "Find the ideal college, access study guides, and compare options with independent reviews.",
+    url: "https://juvion.top",
+    siteName: "Juvion",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Juvion - Accelerate your online career",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Juvion | Accelerate your Online Career",
+    description: "Find the ideal college, access study guides, and compare options with independent reviews.",
+    images: ["/opengraph-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({

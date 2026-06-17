@@ -8,9 +8,46 @@ import { notFound } from "next/navigation"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
 
+import type { Metadata, ResolvingMetadata } from "next"
+
 export const revalidate = 60
 
-export default async function GuidePage({ params }: { params: { slug: string } }) {
+export async function generateMetadata(
+  { params }: { params: Promise<{ slug: string }> },
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const { slug } = await params
+  const guide = await client.fetch(`
+    *[_type == "guide" && slug.current == $slug][0] {
+      title,
+      seoTitle,
+      seoDescription,
+      summary
+    }
+  `, { slug })
+
+  if (!guide) return {}
+
+  const previousImages = (await parent).openGraph?.images || []
+
+  return {
+    title: guide.seoTitle || guide.title,
+    description: guide.seoDescription || guide.summary,
+    openGraph: {
+      title: guide.seoTitle || guide.title,
+      description: guide.seoDescription || guide.summary,
+      images: previousImages,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: guide.seoTitle || guide.title,
+      description: guide.seoDescription || guide.summary,
+    },
+  }
+}
+
+export default async function GuidePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
   const guide = await client.fetch(`
     *[_type == "guide" && slug.current == $slug][0] {
       title,
@@ -18,7 +55,7 @@ export default async function GuidePage({ params }: { params: { slug: string } }
       body,
       publishedAt
     }
-  `, { slug: params.slug })
+  `, { slug })
 
   if (!guide) {
     notFound()
