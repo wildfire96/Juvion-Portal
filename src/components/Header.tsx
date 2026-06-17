@@ -30,38 +30,38 @@ export function Header() {
                 href="/" 
                 className={`text-sm transition-all duration-300 ${pathname === '/' ? 'font-bold text-[var(--primary)] border-b-2 border-[var(--primary)] pb-1' : 'font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)]'}`}
               >
-                Início
+                Home
               </Link>
               <Link 
                 href="/guias" 
                 className={`text-sm transition-all duration-300 ${pathname.startsWith('/guias') ? 'font-bold text-[var(--primary)] border-b-2 border-[var(--primary)] pb-1' : 'font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)]'}`}
               >
-                Guias de Estudo
+                Study Guides
               </Link>
               <Link 
                 href="/empresas" 
                 className={`text-sm transition-all duration-300 ${pathname.startsWith('/empresas') ? 'font-bold text-[var(--primary)] border-b-2 border-[var(--primary)] pb-1' : 'font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)]'}`}
               >
-                Para Empresas
+                For Business
               </Link>
               <Link 
                 href="/sobre" 
                 className={`text-sm transition-all duration-300 ${pathname.startsWith('/sobre') ? 'font-bold text-[var(--primary)] border-b-2 border-[var(--primary)] pb-1' : 'font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)]'}`}
               >
-                Sobre o Portal
+                About Us
               </Link>
             </div>
           </div>
           
           <div className="flex items-center gap-4">
-            <button className="p-3 rounded-full hover:bg-[var(--surface-hover)] transition-colors text-[var(--foreground)]" aria-label="Pesquisar">
+            <button className="p-3 rounded-full hover:bg-[var(--surface-hover)] transition-colors text-[var(--foreground)]" aria-label="Search">
               <Search size={20} />
             </button>
             {mounted && (
               <button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 className="p-3 rounded-full hover:bg-[var(--surface-hover)] transition-colors text-[var(--foreground)]"
-                aria-label="Alternar tema"
+                aria-label="Toggle theme"
               >
                 {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
               </button>
@@ -69,7 +69,7 @@ export function Header() {
             <button 
               onClick={() => setIsMobileMenuOpen(true)}
               className="md:hidden p-3 rounded-full hover:bg-[var(--surface-hover)] transition-colors text-[var(--foreground)]" 
-              aria-label="Abrir menu"
+              aria-label="Open menu"
             >
               <Grip size={20} />
             </button>
@@ -87,7 +87,7 @@ export function Header() {
             <button 
               onClick={() => setIsMobileMenuOpen(false)}
               className="p-3 rounded-full hover:bg-[var(--surface-hover)] transition-colors text-[var(--foreground)]" 
-              aria-label="Fechar menu"
+              aria-label="Close menu"
             >
               <X size={24} />
             </button>
@@ -98,28 +98,28 @@ export function Header() {
               onClick={() => setIsMobileMenuOpen(false)}
               className={`text-2xl font-bold transition-all ${pathname === '/' ? 'text-[var(--primary)]' : 'text-[var(--foreground)]'}`}
             >
-              Início
+              Home
             </Link>
             <Link 
               href="/guias" 
               onClick={() => setIsMobileMenuOpen(false)}
               className={`text-2xl font-bold transition-all ${pathname.startsWith('/guias') ? 'text-[var(--primary)]' : 'text-[var(--foreground)]'}`}
             >
-              Guias de Estudo
+              Study Guides
             </Link>
             <Link 
               href="/empresas" 
               onClick={() => setIsMobileMenuOpen(false)}
               className={`text-2xl font-bold transition-all ${pathname.startsWith('/empresas') ? 'text-[var(--primary)]' : 'text-[var(--foreground)]'}`}
             >
-              Para Empresas
+              For Business
             </Link>
             <Link 
               href="/sobre" 
               onClick={() => setIsMobileMenuOpen(false)}
               className={`text-2xl font-bold transition-all ${pathname.startsWith('/sobre') ? 'text-[var(--primary)]' : 'text-[var(--foreground)]'}`}
             >
-              Sobre o Portal
+              About Us
             </Link>
           </div>
         </div>

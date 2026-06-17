@@ -17,8 +17,8 @@ const merriweather = Merriweather({
 });
 
 export const metadata: Metadata = {
-  title: "Juvion | Portal de Carreiras e Faculdades",
-  description: "Encontre a faculdade ideal, acesse guias de estudos e compare opções com análise independente.",
+  title: "Juvion | Career and College Portal",
+  description: "Find the ideal college, access study guides, and compare options with independent reviews.",
 };
 
 export default function RootLayout({
@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="pt-BR"
+      lang="en"
       suppressHydrationWarning
       className={`${manrope.variable} ${merriweather.variable} antialiased scroll-smooth`}
     >

@@ -37,7 +37,7 @@ export function ArticleClient({ post }: { post: any }) {
             className="absolute z-10 w-full h-full flex justify-center items-center pointer-events-none"
           >
             <h1 className="text-[15vw] leading-none font-black text-white/20 whitespace-nowrap tracking-tighter mix-blend-overlay select-none">
-              {post.courseOrCollegeName?.toUpperCase() || "ANÁLISE"}
+              {post.courseOrCollegeName?.toUpperCase() || "REVIEW"}
             </h1>
           </motion.div>
 
@@ -50,7 +50,7 @@ export function ArticleClient({ post }: { post: any }) {
           >
             <div className="max-w-2xl">
               <span className="inline-block py-1.5 px-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold tracking-[0.2em] uppercase mb-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.4)]">
-                Análise Auditada 2026
+                Audited Review 2026
               </span>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight drop-shadow-2xl">
               {post.title}
@@ -85,8 +85,8 @@ export function ArticleClient({ post }: { post: any }) {
               ) : "RJ"}
             </div>
             <div>
-              <p className="text-white text-sm font-bold tracking-tight">{post.author?.name || "Redação Juvion"}</p>
-              <p className="text-white/70 text-xs font-medium">{new Date(post.publishedAt || Date.now()).toLocaleDateString('pt-BR')} • 8 min</p>
+              <p className="text-white text-sm font-bold tracking-tight">{post.author?.name || "Juvion Editorial"}</p>
+              <p className="text-white/70 text-xs font-medium">{new Date(post.publishedAt || Date.now()).toLocaleDateString('en-US')} • 8 min</p>
             </div>
           </div>
         </section>
@@ -110,7 +110,7 @@ export function ArticleClient({ post }: { post: any }) {
               <div className="relative z-10 flex flex-col md:flex-row gap-8 justify-between items-center">
                 <div className="flex gap-10 w-full md:w-auto">
                   <div>
-                    <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-[var(--foreground)]/40 mb-2">Nota Juvion</p>
+                    <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-[var(--foreground)]/40 mb-2">Juvion Score</p>
                     <div className="flex items-baseline gap-1">
                       <span className="text-6xl font-black text-[var(--primary)] tracking-tighter">{post.rating || "5.0"}</span>
                       <span className="text-xl text-[var(--foreground)]/30 font-serif font-bold">/5</span>
@@ -118,7 +118,7 @@ export function ArticleClient({ post }: { post: any }) {
                   </div>
                   <div className="w-px bg-[var(--surface-border)]"></div>
                   <div>
-                    <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-[var(--foreground)]/40 mb-2">Mensalidade Média</p>
+                    <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-[var(--foreground)]/40 mb-2">Average Tuition</p>
                     <div className="flex items-baseline gap-1">
                       <span className="text-4xl font-bold text-[var(--foreground)] tracking-tight">R${Math.floor(post.monthlyPrice || 0)}</span>
                       <span className="text-lg text-[var(--foreground)]/40 font-serif font-bold">,{((post.monthlyPrice || 0) % 1 * 100).toString().padStart(2, '0')}</span>
@@ -127,7 +127,7 @@ export function ArticleClient({ post }: { post: any }) {
                 </div>
                 
                 <a href={post.affiliateLink || "#"} target="_blank" className="w-full md:w-auto bg-[var(--primary)] text-white px-8 py-5 rounded-2xl font-bold text-lg hover:bg-[var(--primary-hover)] transition-all shadow-lg hover:shadow-[var(--primary)]/30 hover:-translate-y-1 active:translate-y-0 flex items-center justify-center gap-3">
-                  Garantir Desconto
+                  Secure Discount
                   <ArrowRight size={20} />
                 </a>
               </div>
@@ -140,14 +140,14 @@ export function ArticleClient({ post }: { post: any }) {
               {post.body ? (
                 <PortableText value={post.body} />
               ) : (
-                <p>O conteúdo da análise será exibido aqui.</p>
+                <p>The content of the review will be displayed here.</p>
               )}
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-16 not-prose font-sans">
                 {post.pros && post.pros.length > 0 && (
                   <div className="bg-[var(--surface)] border border-[var(--surface-border)] p-8 rounded-3xl shadow-sm relative overflow-hidden group hover:border-green-500/30 transition-colors">
                     <div className="absolute top-0 left-0 w-full h-1.5 bg-green-500"></div>
-                    <h4 className="text-[11px] text-green-600 dark:text-green-400 mb-6 uppercase font-black tracking-[0.2em]">O que brilha</h4>
+                    <h4 className="text-[11px] text-green-600 dark:text-green-400 mb-6 uppercase font-black tracking-[0.2em]">What shines</h4>
                     <ul className="space-y-6">
                       {post.pros.map((pro: string, i: number) => (
                         <li key={i} className="flex items-start gap-4 text-[var(--foreground)]/80 text-sm font-medium leading-relaxed">
@@ -162,7 +162,7 @@ export function ArticleClient({ post }: { post: any }) {
                 {post.cons && post.cons.length > 0 && (
                   <div className="bg-[var(--surface)] border border-[var(--surface-border)] p-8 rounded-3xl shadow-sm relative overflow-hidden group hover:border-orange-500/30 transition-colors">
                     <div className="absolute top-0 left-0 w-full h-1.5 bg-orange-500"></div>
-                    <h4 className="text-[11px] text-orange-600 dark:text-orange-400 mb-6 uppercase font-black tracking-[0.2em]">Ponto de atenção</h4>
+                    <h4 className="text-[11px] text-orange-600 dark:text-orange-400 mb-6 uppercase font-black tracking-[0.2em]">Point of attention</h4>
                     <ul className="space-y-6">
                       {post.cons.map((con: string, i: number) => (
                         <li key={i} className="flex items-start gap-4 text-[var(--foreground)]/80 text-sm font-medium leading-relaxed">
@@ -188,20 +188,20 @@ export function ArticleClient({ post }: { post: any }) {
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-[var(--primary)]/40 blur-[120px] rounded-full pointer-events-none group-hover:bg-[var(--secondary)]/40 transition-colors duration-1000"></div>
 
               <span className="relative z-10 bg-white/5 border border-white/10 px-5 py-2 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] text-white/80 mb-8 backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]">
-                Veredito Final
+                Final Verdict
               </span>
               
               <h2 className="relative z-10 text-4xl md:text-5xl lg:text-6xl font-black max-w-3xl leading-[1.1] tracking-tight mb-12 text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60">
-                A {post.courseOrCollegeName || "instituição"} é a escolha lógica para acelerar sua carreira.
+                {post.courseOrCollegeName || "This institution"} is the logical choice to accelerate your career.
               </h2>
               
               <a href={post.affiliateLink || "#"} target="_blank" className="relative z-10 group/btn bg-white text-black px-8 py-4 md:px-10 md:py-5 rounded-2xl font-black text-lg hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_60px_rgba(255,255,255,0.2)] flex items-center justify-center gap-4 w-full md:w-auto">
-                Garantir minha vaga com desconto
+                Secure my spot with discount
                 <div className="bg-black text-white p-2 rounded-xl group-hover/btn:-rotate-45 transition-transform duration-300">
                   <ArrowRight size={20} />
                 </div>
               </a>
-              <p className="relative z-10 text-white/40 text-sm mt-8 font-medium tracking-wide">Inscrição 100% online • Processo simplificado</p>
+              <p className="relative z-10 text-white/40 text-sm mt-8 font-medium tracking-wide">100% online registration • Simplified process</p>
             </div>
 
           </article>
@@ -213,10 +213,10 @@ export function ArticleClient({ post }: { post: any }) {
             <div className="sticky top-32">
               <div className="lg:pl-8 lg:border-l border-[var(--surface-border)] h-full">
                 <h3 className="font-sans text-[10px] font-black uppercase tracking-[0.2em] text-[var(--foreground)]/40 mb-8 border-b border-[var(--surface-border)] pb-4">
-                  Compartilhe
+                  Share
                 </h3>
                 <div className="space-y-10">
-                  <p className="text-sm text-[var(--foreground)]/60">Gostou da análise? Envie para um amigo que está em dúvida de onde estudar.</p>
+                  <p className="text-sm text-[var(--foreground)]/60">Did you like the review? Send it to a friend who is unsure where to study.</p>
                 </div>
               </div>
             </div>

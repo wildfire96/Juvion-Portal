@@ -50,7 +50,7 @@ export default async function Home() {
             ========================================= */}
         <section id="analises" className="max-w-7xl mx-auto px-4 md:px-10 mt-32 mb-20 scroll-mt-32">
           <div className="flex items-center justify-between mb-12">
-            <h2 className="text-4xl font-black tracking-tight text-[var(--foreground)]">Últimas Análises</h2>
+            <h2 className="text-4xl font-black tracking-tight text-[var(--foreground)]">Latest Reviews</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.length > 0 ? posts.map((post, index) => (
@@ -68,33 +68,33 @@ export default async function Home() {
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute top-4 left-4 z-20 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest border border-white/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]">
-                    {post.courseOrCollegeName || "Análise"}
+                    {post.courseOrCollegeName || "Review"}
                   </div>
                 </div>
                 <div className="p-8 flex flex-col flex-1">
                   <h3 className="text-2xl font-bold mb-4 group-hover:text-[var(--primary)] transition-colors leading-[1.2] tracking-tight">{post.title}</h3>
                   <p className="text-[var(--foreground)]/60 font-serif text-sm line-clamp-3 mb-8 flex-1 leading-relaxed">
-                    Acompanhe nossa análise completa sobre {post.courseOrCollegeName || "este tema"}. Veja as notas, mensalidades e o que brilha.
+                    Read our full review on {post.courseOrCollegeName || "this topic"}. Check the grades, tuition fees, and what stands out.
                   </p>
                   <div className="flex items-center gap-4 pt-6 border-t border-[var(--surface-border)]">
                     <div className="relative w-10 h-10 rounded-full bg-gray-300 overflow-hidden border border-[var(--surface-border)] shrink-0">
                       <Image 
                         src={post.author?.image ? urlForImage(post.author.image).url() : "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop"} 
-                        alt={post.author?.name || "Redação Juvion"} 
+                        alt={post.author?.name || "Juvion Editorial"} 
                         fill 
                         sizes="40px" 
                         className="object-cover" 
                       />
                     </div>
                     <div>
-                      <p className="text-[11px] font-black uppercase tracking-widest text-[var(--foreground)]/80">{post.author?.name || "Redação Juvion"}</p>
-                      <p className="text-xs text-[var(--foreground)]/50 mt-1 font-medium">{post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('pt-BR') : "Hoje"} • 8 min</p>
+                      <p className="text-[11px] font-black uppercase tracking-widest text-[var(--foreground)]/80">{post.author?.name || "Juvion Editorial"}</p>
+                      <p className="text-xs text-[var(--foreground)]/50 mt-1 font-medium">{post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-US') : "Today"} • 8 min</p>
                     </div>
                   </div>
                 </div>
               </Link>
-            )) : (
-              <p className="text-[var(--foreground)]/60 col-span-full">Nenhuma análise publicada ainda. O que acha de criar uma no painel do Sanity?</p>
+            ) : (
+              <p className="text-[var(--foreground)]/60 col-span-full">No reviews published yet. How about creating one in the Sanity dashboard?</p>
             )}
             
           </div>
@@ -105,9 +105,9 @@ export default async function Home() {
             ========================================= */}
         <section id="guias-de-estudo" className="max-w-7xl mx-auto px-4 md:px-10 mt-32 mb-20 scroll-mt-32">
           <div className="flex items-center justify-between mb-12">
-            <h2 className="text-4xl font-black tracking-tight text-[var(--foreground)]">Guias de Estudo</h2>
+            <h2 className="text-4xl font-black tracking-tight text-[var(--foreground)]">Study Guides</h2>
             <Link href="/guias" className="hidden sm:flex items-center gap-2 text-sm font-bold text-[var(--primary)] hover:underline">
-              Ver todos <ArrowRight size={16} />
+              View all <ArrowRight size={16} />
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -117,9 +117,9 @@ export default async function Home() {
               <div className="w-12 h-12 rounded-xl bg-[var(--primary)]/10 text-[var(--primary)] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <BookOpen size={24} />
               </div>
-              <h3 className="text-xl font-bold mb-3 group-hover:text-[var(--primary)] transition-colors">Como Estudar para o ENEM</h3>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-[var(--primary)] transition-colors">How to Study for ENEM</h3>
               <p className="text-[var(--foreground)]/60 text-sm font-serif leading-relaxed">
-                Cronograma completo, métodos de revisão e os assuntos que mais caem na prova.
+                Complete schedule, review methods, and the most common subjects in the exam.
               </p>
             </Link>
 
@@ -128,9 +128,9 @@ export default async function Home() {
               <div className="w-12 h-12 rounded-xl bg-[var(--secondary)]/10 text-[var(--secondary)] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <GraduationCap size={24} />
               </div>
-              <h3 className="text-xl font-bold mb-3 group-hover:text-[var(--primary)] transition-colors">Estratégias para o SISU</h3>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-[var(--primary)] transition-colors">SISU Strategies</h3>
               <p className="text-[var(--foreground)]/60 text-sm font-serif leading-relaxed">
-                Aprenda a calcular suas chances e escolher as melhores opções de curso e faculdade.
+                Learn how to calculate your chances and choose the best college and course options.
               </p>
             </Link>
 
@@ -139,9 +139,9 @@ export default async function Home() {
               <div className="w-12 h-12 rounded-xl bg-[var(--foreground)]/10 text-[var(--foreground)] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Brain size={24} />
               </div>
-              <h3 className="text-xl font-bold mb-3 group-hover:text-[var(--primary)] transition-colors">Técnicas de Memorização</h3>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-[var(--primary)] transition-colors">Memorization Techniques</h3>
               <p className="text-[var(--foreground)]/60 text-sm font-serif leading-relaxed">
-                Descubra como reter informações complexas e nunca mais sofrer com brancos na prova.
+                Discover how to retain complex information and never suffer from blanks during exams again.
               </p>
             </Link>
 
