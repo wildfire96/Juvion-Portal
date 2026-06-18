@@ -23,6 +23,10 @@ export const metadata: Metadata = {
     template: "%s | Juvion"
   },
   description: "Find the ideal college, access study guides, and compare options with independent reviews.",
+  icons: {
+    icon: "/logotipo-juvion.webp",
+    apple: "/logotipo-juvion.webp",
+  },
   openGraph: {
     title: "Juvion | Accelerate your Online Career",
     description: "Find the ideal college, access study guides, and compare options with independent reviews.",
