@@ -21,13 +21,21 @@ export function ArticleClient({ post }: { post: any }) {
   const opacity = useTransform(scrollY, [0, 400], [1, 0])
 
   const ptComponents = {
+    block: {
+      h1: ({ children }: any) => <h1 className="text-4xl md:text-5xl font-black mt-12 mb-6 tracking-tight text-[var(--foreground)]">{children}</h1>,
+      h2: ({ children }: any) => <h2 className="text-3xl md:text-4xl font-black mt-10 mb-5 tracking-tight text-[var(--foreground)]">{children}</h2>,
+      h3: ({ children }: any) => <h3 className="text-2xl md:text-3xl font-bold mt-8 mb-4 tracking-tight text-[var(--foreground)]">{children}</h3>,
+      h4: ({ children }: any) => <h4 className="text-xl md:text-2xl font-bold mt-6 mb-3 tracking-tight text-[var(--foreground)]">{children}</h4>,
+      normal: ({ children }: any) => <p className="mb-6 leading-[1.8] text-[var(--foreground)]/80 text-lg">{children}</p>,
+      blockquote: ({ children }: any) => <blockquote className="border-l-4 border-[var(--primary)] pl-6 py-2 my-8 italic text-xl font-medium text-[var(--foreground)]/70 bg-[var(--surface-hover)]/50 rounded-r-lg">{children}</blockquote>,
+    },
     types: {
       image: ({ value }: any) => {
         if (!value?.asset?._ref) {
           return null
         }
         return (
-          <div className="relative w-full h-[300px] md:h-[450px] my-8 rounded-2xl overflow-hidden shadow-xl border border-[var(--surface-border)]">
+          <div className="relative w-full h-[300px] md:h-[450px] my-10 rounded-2xl overflow-hidden shadow-xl border border-[var(--surface-border)]">
             <Image
               src={urlForImage(value).url()}
               alt={value.alt || 'Post image'}

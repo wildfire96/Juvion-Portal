@@ -54,19 +54,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
   const post = await client.fetch(`
     *[_type == "post" && slug.current == $slug][0] {
-      _id,
-      title,
-      slug,
-      courseOrCollegeName,
-      heroImage,
-      author->{name, image},
-      publishedAt,
-      rating,
-      monthlyPrice,
-      affiliateLink,
-      pros,
-      cons,
-      body
+      ...,
+      author->{name, image}
     }
   `, { slug })
 
