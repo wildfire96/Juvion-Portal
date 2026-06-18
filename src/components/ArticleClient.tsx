@@ -39,6 +39,12 @@ export function ArticleClient({ post }: { post: any }) {
       normal: ({ children }: any) => <p className="mb-6 leading-[1.8] text-[var(--foreground)]/80 text-lg">{children}</p>,
       blockquote: ({ children }: any) => <blockquote className="border-l-4 border-[var(--primary)] pl-6 py-2 my-8 italic text-xl font-medium text-[var(--foreground)]/70 bg-[var(--surface-hover)]/50 rounded-r-lg">{children}</blockquote>,
     },
+    marks: {
+      strong: ({ children }: any) => <strong className="font-bold text-[var(--foreground)]">{children}</strong>,
+      em: ({ children }: any) => <em className="italic text-[var(--foreground)]">{children}</em>,
+      code: ({ children }: any) => <code className="bg-[var(--surface-border)] px-1.5 py-0.5 rounded text-sm font-mono text-[var(--foreground)]">{children}</code>,
+      link: ({ value, children }: any) => <a href={value?.href} target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline font-bold">{children}</a>
+    },
     types: {
       image: ({ value }: any) => {
         if (!value?.asset?._ref) {
