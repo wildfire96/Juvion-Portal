@@ -82,9 +82,9 @@ export default async function Home() {
             ========================================= */}
         <section id="analises" className="max-w-7xl mx-auto px-4 md:px-10 mt-32 mb-20 scroll-mt-32">
           <div className="flex items-center justify-between mb-12">
-            <h2 className="text-4xl font-black tracking-tight text-[var(--foreground)]">Latest Reviews</h2>
+            <h2 className="text-4xl font-black tracking-tight text-[var(--foreground)]">Últimas Análises</h2>
             <Link href="/analises" className="hidden sm:flex items-center gap-2 text-sm font-bold text-[var(--primary)] hover:underline">
-              View all <ArrowRight size={16} />
+              Ver todas <ArrowRight size={16} />
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -103,13 +103,13 @@ export default async function Home() {
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute top-4 left-4 z-20 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest border border-white/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]">
-                    {post.courseOrCollegeName || "Review"}
+                    {post.courseOrCollegeName || "Análise"}
                   </div>
                 </div>
                 <div className="p-8 flex flex-col flex-1">
                   <h3 className="text-2xl font-bold mb-4 group-hover:text-[var(--primary)] transition-colors leading-[1.2] tracking-tight">{post.title}</h3>
                   <p className="text-[var(--foreground)]/60 font-serif text-sm line-clamp-3 mb-8 flex-1 leading-relaxed">
-                    Read our full review on {post.courseOrCollegeName || "this topic"}. Check the grades, tuition fees, and what stands out.
+                    Leia nossa análise completa sobre {post.courseOrCollegeName || "este tema"}. Confira as notas, mensalidades e o que se destaca.
                   </p>
                   <div className="flex items-center gap-4 pt-6 border-t border-[var(--surface-border)]">
                     <div className="relative w-10 h-10 rounded-full bg-gray-300 overflow-hidden border border-[var(--surface-border)] shrink-0">
@@ -122,14 +122,14 @@ export default async function Home() {
                       />
                     </div>
                     <div>
-                      <p className="text-[11px] font-black uppercase tracking-widest text-[var(--foreground)]/80">{post.author?.name || "Juvion Editorial"}</p>
-                      <p className="text-xs text-[var(--foreground)]/50 mt-1 font-medium">{post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-US') : "Today"} • 8 min</p>
+                      <p className="text-[11px] font-black uppercase tracking-widest text-[var(--foreground)]/80">{post.author?.name || "Editorial Juvion"}</p>
+                      <p className="text-xs text-[var(--foreground)]/50 mt-1 font-medium">{post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('pt-BR') : "Hoje"} • 8 min</p>
                     </div>
                   </div>
                 </div>
               </Link>
             )) : (
-              <p className="text-[var(--foreground)]/60 col-span-full">No reviews published yet. How about creating one in the Sanity dashboard?</p>
+              <p className="text-[var(--foreground)]/60 col-span-full">Nenhuma análise publicada ainda. Que tal criar uma no painel do Sanity?</p>
             )}
             
           </div>
@@ -140,9 +140,9 @@ export default async function Home() {
             ========================================= */}
         <section id="guias-de-estudo" className="max-w-7xl mx-auto px-4 md:px-10 mt-32 mb-20 scroll-mt-32">
           <div className="flex items-center justify-between mb-12">
-            <h2 className="text-4xl font-black tracking-tight text-[var(--foreground)]">Study Guides</h2>
+            <h2 className="text-4xl font-black tracking-tight text-[var(--foreground)]">Guias de Estudo</h2>
             <Link href="/guides" className="hidden sm:flex items-center gap-2 text-sm font-bold text-[var(--primary)] hover:underline">
-              View all <ArrowRight size={16} />
+              Ver todos <ArrowRight size={16} />
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -158,12 +158,12 @@ export default async function Home() {
                   </div>
                   <h3 className="text-xl font-bold mb-3 group-hover:text-[var(--primary)] transition-colors">{guide.title}</h3>
                   <p className="text-[var(--foreground)]/60 text-sm font-serif leading-relaxed">
-                    {guide.summary || "Complete schedule, review methods, and the most common subjects in the exam."}
+                    {guide.summary || "Cronograma completo, métodos de revisão e os assuntos mais comuns no exame."}
                   </p>
                 </Link>
               )
             }) : (
-              <p className="text-[var(--foreground)]/60 col-span-full">No study guides published yet.</p>
+              <p className="text-[var(--foreground)]/60 col-span-full">Nenhum guia de estudo publicado ainda.</p>
             )}
 
           </div>

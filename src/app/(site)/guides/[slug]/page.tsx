@@ -70,7 +70,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
         <article className="max-w-4xl mx-auto px-6 lg:px-8">
           
           <Link href="/guides" className="inline-flex items-center gap-2 text-[var(--primary)] font-bold text-sm hover:underline mb-12 transition-all hover:-translate-x-1">
-            <ArrowLeft size={16} /> Back to Guides
+            <ArrowLeft size={16} /> Voltar aos Guias
           </Link>
 
           <header className="mb-16">
@@ -81,9 +81,9 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
               {guide.summary}
             </p>
             <div className="mt-8 flex items-center gap-4 text-sm text-[var(--foreground)]/40 font-medium tracking-wide">
-              <span>{new Date(guide.publishedAt || Date.now()).toLocaleDateString('en-US')}</span>
+              <span>{new Date(guide.publishedAt || Date.now()).toLocaleDateString('pt-BR')}</span>
               <span>•</span>
-              <span>Study Guide</span>
+              <span>Guia de Estudo</span>
             </div>
           </header>
 
@@ -91,7 +91,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
             {guide.body ? (
               <PortableText value={guide.body} />
             ) : (
-              <p>Content is empty.</p>
+              <p>O conteúdo está vazio.</p>
             )}
           </div>
           

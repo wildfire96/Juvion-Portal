@@ -1,0 +1,590 @@
+[
+    {
+        "name": "Transportes Garberg",
+        "category": "Empresa de Logística",
+        "phone": "05433118355",
+        "website": "http://www.transportesgarberg.com.br/",
+        "status": "Cold Lead",
+        "analysis": {
+            "design_classificacao": "Aceitável",
+            "design_detalhes": "Design razoável, com banner principal e menu organizado. Não é a maior prioridade.",
+            "lighthouse_score": null,
+            "technologies": [
+                "Erro ao carregar"
+            ]
+        }
+    },
+    {
+        "name": "CADORE Transportes & Logística",
+        "category": "Empresa de Logística",
+        "phone": "05433151566",
+        "website": "http://www.cadore.com.br/",
+        "status": "Cold Lead",
+        "analysis": {
+            "design_classificacao": "Aceitável",
+            "design_detalhes": "Site funcional. Apresenta modal de alerta logo na entrada, mas o layout parece OK.",
+            "lighthouse_score": 80,
+            "technologies": [
+                "WordPress",
+                "PHP"
+            ]
+        }
+    },
+    {
+        "name": "VETTA TRANSPORTES E LOGISTICA DE CARGAS ESPECIAIS",
+        "category": "Empresa de Logística",
+        "phone": "054999917191",
+        "website": "http://www.vettatransportes.com.br/",
+        "status": "Hot Lead",
+        "analysis": {
+            "design_classificacao": "Defasado",
+            "design_detalhes": "Design antigo, menus pequenos e layout quadrado que não passa tanta credibilidade moderna.",
+            "lighthouse_score": null,
+            "technologies": [
+                "Desconhecida / Custom"
+            ]
+        }
+    },
+    {
+        "name": "TW Transportes",
+        "category": "Empresa de Logística",
+        "phone": "05433160200",
+        "website": "https://www.twtransportes.com.br/",
+        "status": "Cold Lead",
+        "analysis": {
+            "design_classificacao": "Aceitável",
+            "design_detalhes": "Site moderno, conta com gerenciador de cookies e layout atualizado.",
+            "lighthouse_score": null,
+            "technologies": [
+                "WordPress",
+                "PHP"
+            ]
+        }
+    },
+    {
+        "name": "Di Canalli",
+        "category": "Empresa de Logística",
+        "phone": "05421042350",
+        "website": "https://www.dicanalli.com.br/",
+        "status": "Hot Lead",
+        "analysis": {
+            "design_classificacao": "Aguardando Antigravity",
+            "design_detalhes": "Verifique o arquivo screenshots/Di_Canalli.jpg",
+            "lighthouse_score": 31,
+            "technologies": [
+                "Desconhecida / Custom"
+            ],
+            "motivo_extra": "Performance mobile inaceitável."
+        }
+    },
+    {
+        "name": "Transportadora Jadlog",
+        "category": "Empresa de Logística",
+        "phone": "054996067908",
+        "website": "https://www.jadlog.com.br/jadlog/home",
+        "status": "Hot Lead",
+        "analysis": {
+            "design_classificacao": "Aguardando Antigravity",
+            "design_detalhes": "Verifique o arquivo screenshots/Transportadora_Jadlog.jpg",
+            "lighthouse_score": 46,
+            "technologies": [
+                "Desconhecida / Custom"
+            ],
+            "motivo_extra": "Performance mobile inaceitável."
+        }
+    },
+    {
+        "name": "Braspress Transportes Urgentes| Passo Fundo - PFB",
+        "category": "Empresa de Logística",
+        "phone": "05433175300",
+        "website": "http://www.braspress.com/",
+        "status": "Hot Lead",
+        "analysis": {
+            "design_classificacao": "Fora do ar",
+            "design_detalhes": "O site está retornando erro Http/1.1 Service Unavailable.",
+            "lighthouse_score": 100,
+            "technologies": [
+                "Desconhecida / Custom"
+            ]
+        }
+    },
+    {
+        "name": "Salles Transportes, fretes e mudanças.",
+        "category": "Empresa de Logística",
+        "phone": "054981085277",
+        "website": null,
+        "status": "Hot Lead",
+        "analysis": {
+            "motivo": "Não possui website."
+        }
+    },
+    {
+        "name": "Reiterlog Transportes E Logística",
+        "category": "Empresa de Logística",
+        "phone": "054991392274",
+        "website": null,
+        "status": "Hot Lead",
+        "analysis": {
+            "motivo": "Não possui website."
+        }
+    },
+    {
+        "name": "CD Sul Logística - Filial PFO",
+        "category": "Empresa de Logística",
+        "phone": "05421040200",
+        "website": "http://www.cdsullogistica.com.br/",
+        "status": "Cold Lead",
+        "analysis": {
+            "design_classificacao": "Aceitável",
+            "design_detalhes": "Site funcional com imagem de capa bonita e aceite de cookies, parece ok.",
+            "lighthouse_score": 67,
+            "technologies": [
+                "Desconhecida / Custom"
+            ]
+        }
+    },
+    {
+        "name": "Stefani Transporte e Logística",
+        "category": "Logística Premium e Hubs de Carga",
+        "phone": "05130521400",
+        "website": "http://www.stefani.com.br/",
+        "status": "Hot Lead",
+        "analysis": {
+            "design_classificacao": "Aguardando Antigravity",
+            "design_detalhes": "Verifique o arquivo screenshots/Stefani_Transporte_e_Logística.jpg",
+            "lighthouse_score": 39,
+            "lighthouse_metrics": {
+                "performance": 39,
+                "accessibility": 62,
+                "best_practices": 81,
+                "seo": 77
+            },
+            "technologies": [
+                "Desconhecida / Custom"
+            ],
+            "motivo_extra": "Métricas críticas: Performance (39/100), SEO (77/100), Acessibilidade (62/100), Boas Práticas (81/100)."
+        }
+    },
+    {
+        "name": "Transtry Transporte e Logística - Unidade Canoas",
+        "category": "Logística Premium e Hubs de Carga",
+        "phone": "05134760637",
+        "website": "http://www.transtry.com.br/",
+        "status": "Hot Lead",
+        "analysis": {
+            "design_classificacao": "Defasado",
+            "design_detalhes": "Design amador e formato antigo com blocos muito rígidos. As imagens parecem coladas. Site claramente precisando de renovação visual.",
+            "lighthouse_score": null,
+            "lighthouse_metrics": {
+                "performance": null,
+                "accessibility": null,
+                "best_practices": null,
+                "seo": null
+            },
+            "technologies": [
+                "WordPress",
+                "PHP"
+            ]
+        }
+    },
+    {
+        "name": "Tomasi Logística",
+        "category": "Logística Premium e Hubs de Carga",
+        "phone": "05134776410",
+        "website": "http://tomasilogistica.com.br/",
+        "status": "Hot Lead",
+        "analysis": {
+            "design_classificacao": "Aguardando Antigravity",
+            "design_detalhes": "Verifique o arquivo screenshots/Tomasi_Logística.jpg",
+            "lighthouse_score": 16,
+            "lighthouse_metrics": {
+                "performance": 16,
+                "accessibility": 76,
+                "best_practices": 41,
+                "seo": 92
+            },
+            "technologies": [
+                "PHP"
+            ],
+            "motivo_extra": "Métricas críticas: Performance (16/100), Acessibilidade (76/100), Boas Práticas (41/100)."
+        }
+    },
+    {
+        "name": "TSG - Transporte Silveira Gomes",
+        "category": "Logística Premium e Hubs de Carga",
+        "phone": "05121028500",
+        "website": "https://www.silveiragomes.com.br/",
+        "status": "Cold Lead",
+        "analysis": {
+            "design_classificacao": "Aceitável",
+            "design_detalhes": "Site bonito, moderno, tela cheia, banner de cookies. Além disso as métricas estão perfeitas. Descartar.",
+            "lighthouse_score": 74,
+            "lighthouse_metrics": {
+                "performance": 74,
+                "accessibility": 95,
+                "best_practices": 100,
+                "seo": 92
+            },
+            "technologies": [
+                "WordPress",
+                "Wix",
+                "React"
+            ]
+        }
+    },
+    {
+        "name": "BR Logística Rodo e Aéreo",
+        "category": "Logística Premium e Hubs de Carga",
+        "phone": "05134641594",
+        "website": "http://www.brlogmultimodal.com.br/",
+        "status": "Hot Lead",
+        "analysis": {
+            "design_classificacao": "Fora do ar",
+            "design_detalhes": "O site não resolveu o DNS (ERR_NAME_NOT_RESOLVED). Totalmente offline.",
+            "lighthouse_score": null,
+            "lighthouse_metrics": {
+                "performance": null,
+                "accessibility": null,
+                "best_practices": null,
+                "seo": null
+            },
+            "technologies": [
+                "Erro ao carregar"
+            ]
+        }
+    },
+    {
+        "name": "Dalla Valle Transportes",
+        "category": "Logística Premium e Hubs de Carga",
+        "phone": "05130524922",
+        "website": "https://www.dallavalle.com.br/",
+        "status": "Hot Lead",
+        "analysis": {
+            "design_classificacao": "Fora do ar",
+            "design_detalhes": "Erro de SSL/Certificado inválido. Navegadores bloqueiam o site.",
+            "lighthouse_score": null,
+            "lighthouse_metrics": {
+                "performance": null,
+                "accessibility": null,
+                "best_practices": null,
+                "seo": null
+            },
+            "technologies": [
+                "Erro ao carregar"
+            ]
+        }
+    },
+    {
+        "name": "Cooperliquidos - Cooperativa de Transporte e Logística",
+        "category": "Logística Premium e Hubs de Carga",
+        "phone": "051998710966",
+        "website": "http://cooperliquidos.com.br/",
+        "status": "Hot Lead",
+        "analysis": {
+            "design_classificacao": "Aguardando Antigravity",
+            "design_detalhes": "Verifique o arquivo screenshots/Cooperliquidos_-_Cooperativa_de_Transporte_e_Logística.jpg",
+            "lighthouse_score": 60,
+            "lighthouse_metrics": {
+                "performance": 60,
+                "accessibility": 80,
+                "best_practices": 70,
+                "seo": 92
+            },
+            "technologies": [
+                "WordPress",
+                "PHP"
+            ],
+            "motivo_extra": "Métricas críticas: Performance (60/100), Acessibilidade (80/100), Boas Práticas (70/100)."
+        }
+    },
+    {
+        "name": "Théo Transportes - Filial Canoas/RS",
+        "category": "Logística Premium e Hubs de Carga",
+        "phone": "05134638167",
+        "website": "https://theotransportes.com/",
+        "status": "Hot Lead",
+        "analysis": {
+            "design_classificacao": "Aguardando Antigravity",
+            "design_detalhes": "Verifique o arquivo screenshots/Théo_Transportes_-_Filial_CanoasRS.jpg",
+            "lighthouse_score": 50,
+            "lighthouse_metrics": {
+                "performance": 50,
+                "accessibility": 84,
+                "best_practices": 92,
+                "seo": 92
+            },
+            "technologies": [
+                "WordPress",
+                "PHP"
+            ],
+            "motivo_extra": "Métricas críticas: Performance (50/100), Acessibilidade (84/100)."
+        }
+    },
+    {
+        "name": "FG Express Transportes",
+        "category": "Logística Premium e Hubs de Carga",
+        "phone": "05130590734",
+        "website": "http://www.fgexpress.com.br/",
+        "status": "Hot Lead",
+        "analysis": {
+            "design_classificacao": "Aguardando Antigravity",
+            "design_detalhes": "Verifique o arquivo screenshots/FG_Express_Transportes.jpg",
+            "lighthouse_score": 71,
+            "lighthouse_metrics": {
+                "performance": 71,
+                "accessibility": 96,
+                "best_practices": 59,
+                "seo": 100
+            },
+            "technologies": [
+                "WordPress",
+                "Wix",
+                "React"
+            ],
+            "motivo_extra": "Métricas críticas: Boas Práticas (59/100)."
+        }
+    },
+    {
+        "name": "TBM Logística e Transportes",
+        "category": "Logística Premium e Hubs de Carga",
+        "phone": "05139398008",
+        "website": "https://www.tbmlog.com.br/",
+        "status": "Hot Lead",
+        "analysis": {
+            "design_classificacao": "Aguardando Antigravity",
+            "design_detalhes": "Verifique o arquivo screenshots/TBM_Logística_e_Transportes.jpg",
+            "lighthouse_score": 57,
+            "lighthouse_metrics": {
+                "performance": 57,
+                "accessibility": 88,
+                "best_practices": 96,
+                "seo": 92
+            },
+            "technologies": [
+                "WordPress",
+                "PHP"
+            ],
+            "motivo_extra": "Métricas críticas: Performance (57/100)."
+        }
+    },
+    {
+        "name": "Droga Raia",
+        "category": "Farmácia 24h",
+        "phone": "055999343504",
+        "website": null,
+        "status": "Hot Lead",
+        "analysis": {
+            "motivo": "Não possui website."
+        }
+    },
+    {
+        "name": "Panvel Farmácias",
+        "category": "Farmácia 24h",
+        "phone": "08006429001",
+        "website": "https://www.panvel.com/",
+        "status": "Hot Lead",
+        "analysis": {
+            "design_classificacao": "Aceitável",
+            "design_detalhes": "Site robusto de e-commerce, design bem resolvido.",
+            "lighthouse_score": 30,
+            "lighthouse_metrics": {
+                "performance": 30,
+                "accessibility": 91,
+                "best_practices": 57,
+                "seo": 100
+            },
+            "technologies": [
+                "Desconhecida / Custom"
+            ],
+            "motivo_extra": "Métricas críticas: Performance (30/100), Boas Práticas (57/100)."
+        }
+    },
+    {
+        "name": "SuperFarma",
+        "category": "Farmácia 24h",
+        "phone": "05532221234",
+        "website": null,
+        "status": "Hot Lead",
+        "analysis": {
+            "motivo": "Não possui website."
+        }
+    },
+    {
+        "name": "Droga Raia",
+        "category": "Farmácia 24h",
+        "phone": "055997111338",
+        "website": null,
+        "status": "Hot Lead",
+        "analysis": {
+            "motivo": "Não possui website."
+        }
+    },
+    {
+        "name": "Farmácia São João",
+        "category": "Farmácia 24h",
+        "phone": "054997116474",
+        "website": "https://www.saojoaofarmacias.com.br/",
+        "status": "Cold Lead",
+        "analysis": {
+            "design_classificacao": "Aceitável",
+            "design_detalhes": "Site robusto de e-commerce de grande rede. Design ok.",
+            "lighthouse_score": null,
+            "lighthouse_metrics": {
+                "performance": null,
+                "accessibility": null,
+                "best_practices": null,
+                "seo": null
+            },
+            "technologies": [
+                "React"
+            ]
+        }
+    },
+    {
+        "name": "Farmácia Alternativa",
+        "category": "Farmácia 24h",
+        "phone": null,
+        "website": null,
+        "status": "Hot Lead",
+        "analysis": {
+            "motivo": "Não possui website."
+        }
+    },
+    {
+        "name": "RCC Drogarias e Farmácias",
+        "category": "Farmácia 24h",
+        "phone": "05530257361",
+        "website": null,
+        "status": "Hot Lead",
+        "analysis": {
+            "motivo": "Não possui website."
+        }
+    },
+    {
+        "name": "Botique Farma Farmácia e Manipulação",
+        "category": "Farmácia 24h",
+        "phone": "05532223665",
+        "website": null,
+        "status": "Hot Lead",
+        "analysis": {
+            "motivo": "Não possui website."
+        }
+    },
+    {
+        "name": "Farmácia São João",
+        "category": "Farmácia 24h",
+        "phone": "08008707070",
+        "website": "https://www.saojoaofarmacias.com.br/",
+        "status": "Cold Lead",
+        "analysis": {
+            "design_classificacao": "Aceitável",
+            "design_detalhes": "Site robusto de e-commerce de grande rede. Design ok.",
+            "lighthouse_score": null,
+            "lighthouse_metrics": {
+                "performance": null,
+                "accessibility": null,
+                "best_practices": null,
+                "seo": null
+            },
+            "technologies": [
+                "React"
+            ]
+        }
+    },
+    {
+        "name": "Escola Técnica Ijuí - SEG",
+        "category": "Escolas Técnicas",
+        "phone": "05533328839",
+        "website": "http://www.estudeseg.com.br/",
+        "status": "Hot Lead",
+        "analysis": {
+            "design_classificacao": "Aceitável",
+            "design_detalhes": "Design razoável e moderno, porém peca brutalmente na performance técnica.",
+            "pagespeed_score": 46,
+            "pagespeed_metrics": {
+                "performance": 46,
+                "accessibility": 93,
+                "best_practices": 59,
+                "seo": 92
+            },
+            "technologies": [
+                "PHP"
+            ],
+            "motivo_extra": "Métricas críticas: Performance (46/100), Boas Práticas (59/100)."
+        }
+    },
+    {
+        "name": "Escola Técnica Estadual 25 de Julho",
+        "category": "Escolas Técnicas",
+        "phone": "055992023143",
+        "website": "http://www.escola25dejulho.com.br/",
+        "status": "Hot Lead",
+        "analysis": {
+            "design_classificacao": "Defasado",
+            "design_detalhes": "Site com um popup gigante bloqueando a usabilidade principal. Acessibilidade e SEO muito baixos.",
+            "pagespeed_score": 57,
+            "pagespeed_metrics": {
+                "performance": 57,
+                "accessibility": 68,
+                "best_practices": 74,
+                "seo": 83
+            },
+            "technologies": [
+                "PHP"
+            ],
+            "motivo_extra": "Métricas críticas: Performance (57/100), SEO (83/100), Acessibilidade (68/100), Boas Práticas (74/100)."
+        }
+    },
+    {
+        "name": "Senac Ijuí",
+        "category": "Escolas Técnicas",
+        "phone": "05533327022",
+        "website": "https://www.senacrs.com.br/unidade/16",
+        "status": "Cold Lead",
+        "analysis": {
+            "design_classificacao": "Aceitável",
+            "design_detalhes": "Site institucional grande. Design OK.",
+            "pagespeed_score": null,
+            "pagespeed_metrics": {
+                "performance": null,
+                "accessibility": null,
+                "best_practices": null,
+                "seo": null
+            },
+            "technologies": [
+                "Desconhecida / Custom"
+            ]
+        }
+    },
+    {
+        "name": "Instituto Mix Ijuí - RS",
+        "category": "Escolas Técnicas",
+        "phone": "05533338308",
+        "website": "http://www.institutomix.com.br/",
+        "status": "Unknown",
+        "analysis": {
+            "design_classificacao": "Erro",
+            "design_detalhes": "Erro ao tirar screenshot.",
+            "pagespeed_score": null,
+            "pagespeed_metrics": {
+                "performance": null,
+                "accessibility": null,
+                "best_practices": null,
+                "seo": null
+            },
+            "technologies": [
+                "Erro ao carregar"
+            ]
+        }
+    },
+    {
+        "name": "Hey Peppers - Escola de Inglês em Ijuí",
+        "category": "Escolas Técnicas",
+        "phone": "055984542910",
+        "website": "https://www.instagram.com/heypeppers_ijui?igsh=azc2aWF4a2FrMTRp",
+        "status": "Hot Lead",
+        "analysis": {
+            "motivo": "Usa apenas rede social ou link de bio em vez de site."
+        }
+    }
+]

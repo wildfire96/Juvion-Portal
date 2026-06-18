@@ -1,0 +1,133 @@
+[
+    {
+        "name": "Senac Canoas",
+        "category": "Escolas Técnicas",
+        "phone": "05133766640",
+        "website": "https://www.senacrs.com.br/unidade/31",
+        "status": "Pending Vision",
+        "analysis": {
+            "design_classificacao": "Aguardando Antigravity",
+            "design_detalhes": "Verifique o arquivo screenshots/Senac_Canoas.jpg",
+            "pagespeed_score": null,
+            "pagespeed_metrics": {
+                "performance": null,
+                "accessibility": null,
+                "best_practices": null,
+                "seo": null
+            },
+            "technologies": [
+                "Desconhecida / Custom"
+            ]
+        }
+    },
+    {
+        "name": "Escola Técnica Canoas - SEG",
+        "category": "Escolas Técnicas",
+        "phone": "05134771645",
+        "website": "http://www.estudeseg.com.br/",
+        "status": "Hot Lead",
+        "analysis": {
+            "design_classificacao": "Aguardando Antigravity",
+            "design_detalhes": "Verifique o arquivo screenshots/Escola_Técnica_Canoas_-_SEG.jpg",
+            "pagespeed_score": 47,
+            "pagespeed_metrics": {
+                "performance": 47,
+                "accessibility": 93,
+                "best_practices": 59,
+                "seo": 92
+            },
+            "technologies": [
+                "PHP"
+            ],
+            "motivo_extra": "Métricas críticas: Performance (47/100), Boas Práticas (59/100)."
+        }
+    },
+    {
+        "name": "Instituto Mix Canoas - RS",
+        "category": "Escolas Técnicas",
+        "phone": "05139223065",
+        "website": "http://www.institutomix.com.br/",
+        "status": "Pending Vision",
+        "analysis": {
+            "design_classificacao": "Aguardando Antigravity",
+            "design_detalhes": "Verifique o arquivo screenshots/Instituto_Mix_Canoas_-_RS.jpg",
+            "pagespeed_score": null,
+            "pagespeed_metrics": {
+                "performance": null,
+                "accessibility": null,
+                "best_practices": null,
+                "seo": null
+            },
+            "technologies": [
+                "React"
+            ]
+        }
+    },
+    {
+        "name": "Grau Técnico Canoas: Administração, Enfermagem e Radiologia",
+        "category": "Escolas Técnicas",
+        "phone": "051999947234",
+        "website": "https://www.grautecnico.com.br/",
+        "status": "Hot Lead",
+        "analysis": {
+            "design_classificacao": "Aguardando Antigravity",
+            "design_detalhes": "Verifique o arquivo screenshots/Grau_Técnico_Canoas_Administração,_Enfermagem_e_Radiologia.jpg",
+            "pagespeed_score": 48,
+            "pagespeed_metrics": {
+                "performance": 48,
+                "accessibility": 93,
+                "best_practices": 100,
+                "seo": 91
+            },
+            "technologies": [
+                "WordPress"
+            ],
+            "motivo_extra": "Métricas críticas: Performance (48/100)."
+        }
+    },
+    {
+        "name": "IFRS - Campus Canoas",
+        "category": "Escolas Técnicas",
+        "phone": "05134158200",
+        "website": "https://ifrs.edu.br/canoas/",
+        "status": "Pending Vision",
+        "analysis": {
+            "design_classificacao": "Aguardando Antigravity",
+            "design_detalhes": "Verifique o arquivo screenshots/IFRS_-_Campus_Canoas.jpg",
+            "pagespeed_score": null,
+            "pagespeed_metrics": {
+                "performance": null,
+                "accessibility": null,
+                "best_practices": null,
+                "seo": null
+            },
+            "technologies": [
+                "WordPress",
+                "PHP"
+            ]
+        }
+    },
+    {
+        "name": "QI Faculdade e Escola Técnica - Canoas",
+        "category": "Escolas Técnicas",
+        "phone": "05130140018",
+        "website": "https://qi.edu.br/",
+        "status": "Hot Lead",
+        "analysis": {
+            "design_classificacao": "Aguardando Antigravity",
+            "design_detalhes": "Verifique o arquivo screenshots/QI_Faculdade_e_Escola_Técnica_-_Canoas.jpg",
+            "pagespeed_score": 77,
+            "pagespeed_metrics": {
+                "performance": 77,
+                "accessibility": 86,
+                "best_practices": 73,
+                "seo": 92
+            },
+            "technologies": [
+                "WordPress",
+                "PHP"
+            ],
+            "motivo_extra": "Métricas críticas: Boas Práticas (73/100)."
+        }
+    }
+]

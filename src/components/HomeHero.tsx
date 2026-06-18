@@ -26,17 +26,17 @@ export function HomeHero() {
       >
         <div className="max-w-2xl mt-12 md:mt-24">
           <span className="inline-block py-1.5 px-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold tracking-[0.2em] uppercase mb-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.4)]">
-            Independent Portal
+            Portal Independente
           </span>
         <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight drop-shadow-2xl mb-8">
-          Decide your future with absolute certainty.
+          Decida seu futuro com absoluta certeza.
         </h2>
         <p className="text-white/80 text-lg md:text-xl font-serif max-w-xl mb-10 drop-shadow-md">
-          Definitive and transparent reviews of the best online and on-campus tech colleges.
+          Análises definitivas e transparentes das melhores faculdades de tecnologia online e presenciais.
         </p>
         <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mt-10 pb-12 md:pb-0">
           <Link href="#analises" className="group bg-white text-black px-8 py-4 rounded-2xl font-black text-lg hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)] inline-flex items-center gap-4 shrink-0">
-            Explore Reviews
+            Explorar Análises
             <div className="bg-black text-white p-1.5 rounded-xl group-hover:translate-x-1 transition-transform">
               <ArrowRight size={18} />
             </div>
@@ -51,8 +51,8 @@ export function HomeHero() {
               ))}
             </div>
             <div>
-              <p className="text-white text-sm font-bold tracking-tight">50+ Institutions</p>
-              <p className="text-white/70 text-xs font-medium">Rigorously evaluated</p>
+              <p className="text-white text-sm font-bold tracking-tight">+50 Instituições</p>
+              <p className="text-white/70 text-xs font-medium">Rigorosamente avaliadas</p>
             </div>
           </div>
         </div>

@@ -40,9 +40,9 @@ export default async function AnalisesPage() {
       <main className="pb-24">
         <section className="max-w-7xl mx-auto px-4 md:px-10 mb-20">
           <div className="mb-12">
-            <h1 className="text-5xl font-black tracking-tight text-[var(--foreground)] mb-4">All Reviews</h1>
+            <h1 className="text-5xl font-black tracking-tight text-[var(--foreground)] mb-4">Todas as Análises</h1>
             <p className="text-[var(--foreground)]/60 text-lg font-serif max-w-2xl">
-              Explore our complete collection of definitive and transparent reviews of the best online and on-campus tech colleges.
+              Explore nossa coleção completa de análises definitivas e transparentes das melhores faculdades de tecnologia online e presenciais.
             </p>
           </div>
           
@@ -61,13 +61,13 @@ export default async function AnalisesPage() {
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute top-4 left-4 z-20 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest border border-white/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]">
-                    {post.courseOrCollegeName || "Review"}
+                    {post.courseOrCollegeName || "Análise"}
                   </div>
                 </div>
                 <div className="p-8 flex flex-col flex-1">
                   <h3 className="text-2xl font-bold mb-4 group-hover:text-[var(--primary)] transition-colors leading-[1.2] tracking-tight">{post.title}</h3>
                   <p className="text-[var(--foreground)]/60 font-serif text-sm line-clamp-3 mb-8 flex-1 leading-relaxed">
-                    Read our full review on {post.courseOrCollegeName || "this topic"}. Check the grades, tuition fees, and what stands out.
+                    Leia nossa análise completa sobre {post.courseOrCollegeName || "este tema"}. Confira as notas, mensalidades e o que se destaca.
                   </p>
                   <div className="flex items-center gap-4 pt-6 border-t border-[var(--surface-border)]">
                     <div className="relative w-10 h-10 rounded-full bg-gray-300 overflow-hidden border border-[var(--surface-border)] shrink-0">
@@ -80,14 +80,14 @@ export default async function AnalisesPage() {
                       />
                     </div>
                     <div>
-                      <p className="text-[11px] font-black uppercase tracking-widest text-[var(--foreground)]/80">{post.author?.name || "Juvion Editorial"}</p>
-                      <p className="text-xs text-[var(--foreground)]/50 mt-1 font-medium">{post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('en-US') : "Today"} • 8 min</p>
+                      <p className="text-[11px] font-black uppercase tracking-widest text-[var(--foreground)]/80">{post.author?.name || "Editorial Juvion"}</p>
+                      <p className="text-xs text-[var(--foreground)]/50 mt-1 font-medium">{post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('pt-BR') : "Hoje"} • 8 min</p>
                     </div>
                   </div>
                 </div>
               </Link>
             )) : (
-              <p className="text-[var(--foreground)]/60 col-span-full">No reviews published yet.</p>
+              <p className="text-[var(--foreground)]/60 col-span-full">Nenhuma análise publicada ainda.</p>
             )}
           </div>
         </section>

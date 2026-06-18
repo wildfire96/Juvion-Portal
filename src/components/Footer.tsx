@@ -7,7 +7,7 @@ export function Footer() {
             Juvion
           </a>
           <p className="text-base text-[var(--foreground)] opacity-80 leading-relaxed font-serif">
-            Juvion is an independent portal with honest reviews about online colleges and tech courses. We may receive a commission when you enroll through our links, at no additional cost to you.
+            A Juvion é um portal independente com análises honestas sobre faculdades online e cursos de tecnologia. Podemos receber uma comissão quando você se matricula através de nossos links, sem custo adicional para você.
           </p>
         </div>
         <div className="flex flex-col gap-6">
@@ -16,17 +16,17 @@ export function Footer() {
               Instagram
             </a>
             <a className="text-sm font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)] transition-colors" href="#">
-              Privacy Policy
+              Política de Privacidade
             </a>
             <a className="text-sm font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)] transition-colors" href="#">
-              Terms of Use
+              Termos de Uso
             </a>
             <a className="text-sm font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)] transition-colors" href="/about">
-              Business Contact
+              Contato Comercial
             </a>
           </div>
           <p className="text-sm text-[var(--foreground)] opacity-50">
-            © {new Date().getFullYear()} Juvion Career Portal. All rights reserved.
+            © {new Date().getFullYear()} Portal de Carreiras Juvion. Todos os direitos reservados.
           </p>
         </div>
       </div>

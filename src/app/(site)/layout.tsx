@@ -19,17 +19,17 @@ const merriweather = Merriweather({
 export const metadata: Metadata = {
   metadataBase: new URL("https://juvion.top"),
   title: {
-    default: "Juvion | Accelerate your Online Career",
+    default: "Juvion | Acelere sua Carreira Online",
     template: "%s | Juvion"
   },
-  description: "Find the ideal college, access study guides, and compare options with independent reviews.",
+  description: "Encontre a faculdade ideal, acesse guias de estudo e compare opções com análises independentes.",
   icons: {
     icon: "/logotipo-juvion.webp",
     apple: "/logotipo-juvion.webp",
   },
   openGraph: {
-    title: "Juvion | Accelerate your Online Career",
-    description: "Find the ideal college, access study guides, and compare options with independent reviews.",
+    title: "Juvion | Acelere sua Carreira Online",
+    description: "Encontre a faculdade ideal, acesse guias de estudo e compare opções com análises independentes.",
     url: "https://juvion.top",
     siteName: "Juvion",
     images: [
@@ -37,16 +37,16 @@ export const metadata: Metadata = {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Juvion - Accelerate your online career",
+        alt: "Juvion - Acelere sua carreira online",
       },
     ],
-    locale: "en_US",
+    locale: "pt_BR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Juvion | Accelerate your Online Career",
-    description: "Find the ideal college, access study guides, and compare options with independent reviews.",
+    title: "Juvion | Acelere sua Carreira Online",
+    description: "Encontre a faculdade ideal, acesse guias de estudo e compare opções com análises independentes.",
     images: ["/opengraph-image.png"],
   },
   robots: {
@@ -69,7 +69,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="pt-BR"
       suppressHydrationWarning
       className={`${manrope.variable} ${merriweather.variable} antialiased scroll-smooth`}
     >

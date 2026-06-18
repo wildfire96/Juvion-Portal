@@ -80,16 +80,16 @@ export default function EmpresasPage() {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8">
                 <Sparkles className="w-5 h-5 text-yellow-300" />
-                <span className="text-sm font-semibold tracking-wide uppercase">For HR Managers</span>
+                <span className="text-sm font-semibold tracking-wide uppercase">Para Gestores de RH</span>
               </div>
               
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-8 leading-tight drop-shadow-lg">
-                Education is the best <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-amber-500">benefit.</span>
+                A educação é o melhor <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-amber-500">benefício.</span>
               </h1>
               
               <p className="text-xl md:text-2xl text-white/90 mb-10 leading-relaxed font-light max-w-2xl">
-                Honor your employees' years of dedication by offering real opportunities for knowledge and career growth. 
-                <strong className="block mt-4 text-white font-bold text-2xl">Absolutely Zero Cost to your company.</strong>
+                Honre os anos de dedicação dos seus funcionários oferecendo oportunidades reais de conhecimento e crescimento de carreira. 
+                <strong className="block mt-4 text-white font-bold text-2xl">Custo Absolutamente Zero para a sua empresa.</strong>
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -97,13 +97,13 @@ export default function EmpresasPage() {
                   href="#formulario-parceria"
                   className="px-8 py-4 rounded-xl bg-white text-[var(--primary)] font-bold text-lg hover:bg-gray-100 transition-all shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.5)] hover:-translate-y-1 text-center"
                 >
-                  Become a Partner
+                  Seja um Parceiro
                 </a>
                 <a 
                   href="#como-funciona"
                   className="px-8 py-4 rounded-xl bg-transparent text-white font-bold text-lg hover:bg-white/10 border border-white/30 transition-all text-center"
                 >
-                  Understand the Model
+                  Entenda o Modelo
                 </a>
               </div>
             </motion.div>
@@ -123,17 +123,17 @@ export default function EmpresasPage() {
                     <HeartHandshake className="w-8 h-8 text-[var(--primary)]" />
                   </div>
                   <div>
-                    <h3 className="text-white font-bold text-xl">Direct Impact</h3>
-                    <p className="text-white/70 text-sm">In your team's life</p>
+                    <h3 className="text-white font-bold text-xl">Impacto Direto</h3>
+                    <p className="text-white/70 text-sm">Na vida do seu time</p>
                   </div>
                 </div>
 
                 <ul className="space-y-4">
                   {[
-                    "No joining fees or monthly charges",
-                    "No bureaucracy or IT integration",
-                    "Increases talent retention",
-                    "Strengthens Employer Branding"
+                    "Sem taxas de adesão ou mensalidades",
+                    "Sem burocracia ou integração de TI",
+                    "Aumenta a retenção de talentos",
+                    "Fortalece o Employer Branding"
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-white">
                       <CheckCircle className="w-5 h-5 text-yellow-300 shrink-0" />
@@ -150,10 +150,10 @@ export default function EmpresasPage() {
         <section id="como-funciona" className="py-24 px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-[var(--foreground)] mb-6">
-              Why partner with Juvion?
+              Por que ser parceiro da Juvion?
             </h2>
             <p className="text-lg text-[var(--foreground)]/70 max-w-3xl mx-auto">
-              We take care of all the infrastructure and scholarship negotiations. Your role is simply to pass this amazing bonus on to your team.
+              Nós cuidamos de toda a infraestrutura e negociação de bolsas. Seu papel é apenas repassar esse incrível bônus para o seu time.
             </p>
           </div>
 
@@ -170,9 +170,9 @@ export default function EmpresasPage() {
                 <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm border border-white/10">
                   <span className="text-3xl font-extrabold text-white">R$0</span>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">Absolutely Zero Cost</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">Custo Absolutamente Zero</h3>
                 <p className="text-white/80 text-lg leading-relaxed max-w-lg">
-                  Your company pays nothing to affiliate and has no hidden monthly fees. Juvion's mission is to democratize education; our revenue comes from the volume of students in partner colleges, not from charging those who support them.
+                  Sua empresa não paga nada para se afiliar e não tem mensalidades ocultas. A missão da Juvion é democratizar a educação; nossa receita vem do volume de alunos nas faculdades parceiras, não cobrando de quem os apoia.
                 </p>
               </div>
             </motion.div>
@@ -185,9 +185,9 @@ export default function EmpresasPage() {
               <div className="w-14 h-14 bg-[var(--primary)]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <TrendingUp className="w-7 h-7 text-[var(--primary)]" />
               </div>
-              <h3 className="text-xl font-bold text-[var(--foreground)] mb-3">Career Plan</h3>
+              <h3 className="text-xl font-bold text-[var(--foreground)] mb-3">Plano de Carreira</h3>
               <p className="text-[var(--foreground)]/70">
-                Employees who study become better professionals. Increase productivity and create homegrown leaders.
+                Funcionários que estudam se tornam profissionais melhores. Aumente a produtividade e crie líderes em casa.
               </p>
             </motion.div>
 
@@ -199,9 +199,9 @@ export default function EmpresasPage() {
               <div className="w-14 h-14 bg-[var(--secondary)]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Users className="w-7 h-7 text-[var(--secondary)]" />
               </div>
-              <h3 className="text-xl font-bold text-[var(--foreground)] mb-3">Talent Retention</h3>
+              <h3 className="text-xl font-bold text-[var(--foreground)] mb-3">Retenção de Talentos</h3>
               <p className="text-[var(--foreground)]/70">
-                Educational benefits drastically reduce turnover. Show that the company genuinely cares about the employee's future.
+                Benefícios educacionais reduzem drasticamente a rotatividade. Mostre que a empresa se preocupa genuinamente com o futuro do funcionário.
               </p>
             </motion.div>
 
@@ -216,9 +216,9 @@ export default function EmpresasPage() {
                   <div className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm">
                     <GraduationCap className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-3">Complete University Extension</h3>
+                  <h3 className="text-2xl font-bold text-white mb-3">Extensão Universitária Completa</h3>
                   <p className="text-white/90">
-                    Our online and tech partners are rigorously selected. Your employees will have access to the best curricula with discounts they wouldn't find on their own.
+                    Nossos parceiros online e tech são rigorosamente selecionados. Seus funcionários terão acesso aos melhores currículos com descontos que não encontrariam sozinhos.
                   </p>
                 </div>
                 <div className="md:w-1/3 flex justify-center">
@@ -237,10 +237,10 @@ export default function EmpresasPage() {
             {/* Contexto do Form */}
             <div className="lg:w-1/2">
               <h2 className="text-3xl md:text-5xl font-bold text-[var(--foreground)] mb-6 leading-tight">
-                Take the first step to honor your team.
+                Dê o primeiro passo para honrar seu time.
               </h2>
               <p className="text-lg text-[var(--foreground)]/70 mb-8">
-                Fill out the form and our corporate success team will contact you. The activation process is agile, and you will have materials ready to share with employees in less than 48 hours.
+                Preencha o formulário e nosso time de sucesso corporativo entrará em contato. O processo de ativação é ágil, e você terá materiais prontos para compartilhar com os funcionários em menos de 48 horas.
               </p>
               
               <div className="space-y-6">
@@ -249,8 +249,8 @@ export default function EmpresasPage() {
                     <Briefcase className="w-6 h-6 text-[var(--primary)]" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[var(--foreground)]">Exclusive for HR Management</h4>
-                    <p className="text-sm text-[var(--foreground)]/60">This form is dedicated to those responsible for people management and corporate benefits.</p>
+                    <h4 className="font-bold text-[var(--foreground)]">Exclusivo para Gestão de RH</h4>
+                    <p className="text-sm text-[var(--foreground)]/60">Este formulário é dedicado aos responsáveis pela gestão de pessoas e benefícios corporativos.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -258,8 +258,8 @@ export default function EmpresasPage() {
                     <CheckCircle className="w-6 h-6 text-[var(--secondary)]" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[var(--foreground)]">Zero Financial Commitment</h4>
-                    <p className="text-sm text-[var(--foreground)]/60">We guarantee by contract that the partnership will not generate invoices or charges for your company.</p>
+                    <h4 className="font-bold text-[var(--foreground)]">Zero Compromisso Financeiro</h4>
+                    <p className="text-sm text-[var(--foreground)]/60">Garantimos em contrato que a parceria não gerará boletos ou cobranças para a sua empresa.</p>
                   </div>
                 </div>
               </div>
@@ -268,21 +268,21 @@ export default function EmpresasPage() {
             {/* O Formulário (Drenched Glass Form) */}
             <div className="lg:w-1/2 w-full">
               <div className="bg-[var(--background)] p-8 md:p-10 rounded-3xl shadow-xl border border-[var(--surface-border)]">
-                <h3 className="text-2xl font-bold text-[var(--foreground)] mb-8">Partnership Registration</h3>
+                <h3 className="text-2xl font-bold text-[var(--foreground)] mb-8">Cadastro de Parceria</h3>
                 
                 {status === "success" ? (
                   <div className="text-center p-8">
                     <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                       <CheckCircle className="w-8 h-8 text-green-500" />
                     </div>
-                    <h4 className="text-xl font-bold text-[var(--foreground)] mb-2">Request Sent!</h4>
-                    <p className="text-[var(--foreground)]/70">Our team will contact you shortly.</p>
+                    <h4 className="text-xl font-bold text-[var(--foreground)] mb-2">Solicitação Enviada!</h4>
+                    <p className="text-[var(--foreground)]/70">Nossa equipe entrará em contato em breve.</p>
                   </div>
                 ) : (
                   <form className="space-y-5" onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                       <div className="space-y-2">
-                        <label className="text-sm font-semibold text-[var(--foreground)]/80">Full Name</label>
+                        <label className="text-sm font-semibold text-[var(--foreground)]/80">Nome Completo</label>
                         <input 
                           type="text" 
                           required
@@ -293,20 +293,20 @@ export default function EmpresasPage() {
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-semibold text-[var(--foreground)]/80">Job Title</label>
+                        <label className="text-sm font-semibold text-[var(--foreground)]/80">Cargo</label>
                         <input 
                           type="text" 
                           required
                           value={formData.jobTitle}
                           onChange={(e) => setFormData({...formData, jobTitle: e.target.value})}
-                          placeholder="Ex: HR Director"
+                          placeholder="Ex: Diretor de RH"
                           className="w-full px-4 py-3 rounded-xl border border-[var(--surface-border)] bg-[var(--surface)] text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent transition-all placeholder:text-[var(--foreground)]/30"
                         />
                       </div>
                     </div>
 
                     <div className="space-y-2">
-                      <label className="text-sm font-semibold text-[var(--foreground)]/80">Corporate Email</label>
+                      <label className="text-sm font-semibold text-[var(--foreground)]/80">E-mail Corporativo</label>
                       <input 
                         type="email" 
                         required
@@ -318,7 +318,7 @@ export default function EmpresasPage() {
                     </div>
 
                     <div className="space-y-2">
-                      <label className="text-sm font-semibold text-[var(--foreground)]/80">Company Name</label>
+                      <label className="text-sm font-semibold text-[var(--foreground)]/80">Nome da Empresa</label>
                       <input 
                         type="text" 
                         required
@@ -330,23 +330,23 @@ export default function EmpresasPage() {
                     </div>
 
                     <div className="space-y-2">
-                      <label className="text-sm font-semibold text-[var(--foreground)]/80">Number of Employees</label>
+                      <label className="text-sm font-semibold text-[var(--foreground)]/80">Número de Funcionários</label>
                       <select 
                         required
                         value={formData.employees}
                         onChange={(e) => setFormData({...formData, employees: e.target.value})}
                         className="w-full px-4 py-3 rounded-xl border border-[var(--surface-border)] bg-[var(--surface)] text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] transition-all"
                       >
-                        <option value="" disabled className="text-[var(--foreground)]/50">Select a range</option>
-                        <option value="1-50">1 to 50</option>
-                        <option value="51-200">51 to 200</option>
-                        <option value="201-500">201 to 500</option>
-                        <option value="500+">More than 500</option>
+                        <option value="" disabled className="text-[var(--foreground)]/50">Selecione um intervalo</option>
+                        <option value="1-50">1 a 50</option>
+                        <option value="51-200">51 a 200</option>
+                        <option value="201-500">201 a 500</option>
+                        <option value="500+">Mais de 500</option>
                       </select>
                     </div>
 
                     {status === "error" && (
-                      <p className="text-red-500 text-sm font-medium text-center">Something went wrong. Please try again.</p>
+                      <p className="text-red-500 text-sm font-medium text-center">Algo deu errado. Por favor, tente novamente.</p>
                     )}
 
                     <button 
@@ -354,10 +354,10 @@ export default function EmpresasPage() {
                       disabled={status === "loading"}
                       className="w-full mt-6 px-8 py-4 rounded-xl bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-white font-bold text-lg hover:opacity-90 transition-opacity shadow-lg shadow-blue-500/30 disabled:opacity-70 disabled:cursor-not-allowed"
                     >
-                      {status === "loading" ? "Sending Request..." : "Request Partnership"}
+                      {status === "loading" ? "Enviando Solicitação..." : "Solicitar Parceria"}
                     </button>
                     <p className="text-xs text-center text-[var(--foreground)]/50 mt-4">
-                      By requesting, you agree to our privacy terms and that we will contact you.
+                      Ao solicitar, você concorda com nossos termos de privacidade e com o nosso contato.
                     </p>
                   </form>
                 )}

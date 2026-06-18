@@ -30,25 +30,25 @@ export function Header() {
                 href="/" 
                 className={`text-sm transition-all duration-300 ${pathname === '/' ? 'font-bold text-[var(--primary)] border-b-2 border-[var(--primary)] pb-1' : 'font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)]'}`}
               >
-                Home
+                Início
               </Link>
               <Link 
                 href="/guides" 
                 className={`text-sm transition-all duration-300 ${pathname.startsWith('/guides') ? 'font-bold text-[var(--primary)] border-b-2 border-[var(--primary)] pb-1' : 'font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)]'}`}
               >
-                Study Guides
+                Guias de Estudo
               </Link>
               <Link 
                 href="/empresas" 
                 className={`text-sm transition-all duration-300 ${pathname.startsWith('/empresas') ? 'font-bold text-[var(--primary)] border-b-2 border-[var(--primary)] pb-1' : 'font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)]'}`}
               >
-                For Business
+                Para Empresas
               </Link>
               <Link 
                 href="/about" 
                 className={`text-sm transition-all duration-300 ${pathname.startsWith('/about') ? 'font-bold text-[var(--primary)] border-b-2 border-[var(--primary)] pb-1' : 'font-semibold text-[var(--foreground)] opacity-70 hover:opacity-100 hover:text-[var(--primary)]'}`}
               >
-                About Us
+                Sobre Nós
               </Link>
             </div>
           </div>
@@ -98,28 +98,28 @@ export function Header() {
               onClick={() => setIsMobileMenuOpen(false)}
               className={`text-2xl font-bold transition-all ${pathname === '/' ? 'text-[var(--primary)]' : 'text-[var(--foreground)]'}`}
             >
-              Home
+              Início
             </Link>
             <Link 
               href="/guides" 
               onClick={() => setIsMobileMenuOpen(false)}
               className={`text-2xl font-bold transition-all ${pathname.startsWith('/guides') ? 'text-[var(--primary)]' : 'text-[var(--foreground)]'}`}
             >
-              Study Guides
+              Guias de Estudo
             </Link>
             <Link 
               href="/empresas" 
               onClick={() => setIsMobileMenuOpen(false)}
               className={`text-2xl font-bold transition-all ${pathname.startsWith('/empresas') ? 'text-[var(--primary)]' : 'text-[var(--foreground)]'}`}
             >
-              For Business
+              Para Empresas
             </Link>
             <Link 
               href="/about" 
               onClick={() => setIsMobileMenuOpen(false)}
               className={`text-2xl font-bold transition-all ${pathname.startsWith('/about') ? 'text-[var(--primary)]' : 'text-[var(--foreground)]'}`}
             >
-              About Us
+              Sobre Nós
             </Link>
           </div>
         </div>

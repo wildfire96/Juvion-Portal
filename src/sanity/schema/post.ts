@@ -164,84 +164,84 @@ export default defineType({
       title: 'Texto da Tag no Hero',
       type: 'string',
       group: 'texts',
-      initialValue: 'Audited Review 2026'
+      initialValue: 'Análise Auditada 2026'
     }),
     defineField({
       name: 'scoreLabel',
       title: 'Texto do "Juvion Score"',
       type: 'string',
       group: 'texts',
-      initialValue: 'Juvion Score'
+      initialValue: 'Nota Juvion'
     }),
     defineField({
       name: 'tuitionLabel',
       title: 'Texto da Mensalidade',
       type: 'string',
       group: 'texts',
-      initialValue: 'Average Tuition'
+      initialValue: 'Mensalidade Méd.'
     }),
     defineField({
       name: 'discountButtonText',
       title: 'Texto do Botão de Desconto (Bento Premium)',
       type: 'string',
       group: 'texts',
-      initialValue: 'Secure Discount'
+      initialValue: 'Garantir Desconto'
     }),
     defineField({
       name: 'prosLabel',
       title: 'Texto do Título de Prós',
       type: 'string',
       group: 'texts',
-      initialValue: 'What shines'
+      initialValue: 'O que brilha'
     }),
     defineField({
       name: 'consLabel',
       title: 'Texto do Título de Contras',
       type: 'string',
       group: 'texts',
-      initialValue: 'Point of attention'
+      initialValue: 'Ponto de atenção'
     }),
     defineField({
       name: 'verdictBadgeText',
       title: 'Texto da Tag do Veredito',
       type: 'string',
       group: 'texts',
-      initialValue: 'Final Verdict'
+      initialValue: 'Veredito Final'
     }),
     defineField({
       name: 'verdictTitle',
       title: 'Texto Principal do Veredito (use {nome} para inserir o nome do curso/faculdade)',
       type: 'string',
       group: 'texts',
-      initialValue: '{nome} is the logical choice to accelerate your career.'
+      initialValue: '{nome} é a escolha lógica para acelerar sua carreira.'
     }),
     defineField({
       name: 'verdictButtonText',
       title: 'Texto do Botão do Veredito',
       type: 'string',
       group: 'texts',
-      initialValue: 'Secure my spot with discount'
+      initialValue: 'Garantir minha vaga com desconto'
     }),
     defineField({
       name: 'verdictSubtitle',
       title: 'Subtexto do Veredito',
       type: 'string',
       group: 'texts',
-      initialValue: '100% online registration • Simplified process'
+      initialValue: 'Inscrição 100% online • Processo simplificado'
     }),
     defineField({
       name: 'shareTitle',
       title: 'Título da Sidebar (Share)',
       type: 'string',
       group: 'texts',
-      initialValue: 'Share'
+      initialValue: 'Compartilhar'
     }),
     defineField({
       name: 'shareText',
       title: 'Texto da Sidebar',
       type: 'string',
       group: 'texts',
-      initialValue: 'Did you like the review? Send it to a friend who is unsure where to study.'
+      initialValue: 'Gostou da análise? Mande para um amigo que está em dúvida de onde estudar.'
     }),
   ],
 })

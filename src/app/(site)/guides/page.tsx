@@ -46,9 +46,9 @@ export default async function GuidesPage() {
       <main className="flex-grow pt-32 pb-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="mb-16">
-            <h1 className="text-5xl md:text-6xl font-black tracking-tight text-[var(--foreground)] mb-6">Study Guides</h1>
+            <h1 className="text-5xl md:text-6xl font-black tracking-tight text-[var(--foreground)] mb-6">Guias de Estudo</h1>
             <p className="text-xl text-[var(--foreground)]/70 max-w-2xl font-serif">
-              Master the best study techniques, prepare for ENEM and SISU, and discover how to organize your routine for maximum performance.
+              Domine as melhores técnicas de estudo, prepare-se para o ENEM e SISU, e descubra como organizar sua rotina para o máximo desempenho.
             </p>
           </div>
 
@@ -67,15 +67,15 @@ export default async function GuidesPage() {
                     {guide.summary}
                   </p>
                   <div className="mt-8 pt-6 border-t border-[var(--surface-border)] flex items-center text-sm font-bold text-[var(--primary)] group-hover:translate-x-2 transition-transform">
-                    Read guide →
+                    Ler guia →
                   </div>
                 </Link>
               )
             }) : (
               <div className="col-span-full py-20 text-center border border-dashed border-[var(--surface-border)] rounded-3xl">
                 <BookOpen className="w-12 h-12 text-[var(--foreground)]/20 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-[var(--foreground)] mb-2">No guides published yet</h3>
-                <p className="text-[var(--foreground)]/60">Check back later for new study content.</p>
+                <h3 className="text-xl font-bold text-[var(--foreground)] mb-2">Nenhum guia publicado ainda</h3>
+                <p className="text-[var(--foreground)]/60">Volte mais tarde para novos conteúdos de estudo.</p>
               </div>
             )}
           </div>
