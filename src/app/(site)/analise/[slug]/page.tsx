@@ -63,5 +63,15 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     notFound()
   }
 
-  return <ArticleClient post={post} />
+  // Fetch the latest post that is NOT the current one, to be the highlighted post
+  const highlightedPost = await client.fetch(`
+    *[_type == "post" && slug.current != $slug] | order(publishedAt desc)[0] {
+      title,
+      slug,
+      heroImage,
+      courseOrCollegeName
+    }
+  `, { slug })
+
+  return <ArticleClient post={post} highlightedPost={highlightedPost} />
 }

@@ -12,8 +12,9 @@ import { ArrowRight, CheckCircle2, AlertCircle, Quote } from "lucide-react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { PortableText } from '@portabletext/react'
 import { urlForImage } from "@/sanity/lib/image"
+import Link from "next/link"
 
-export function ArticleClient({ post }: { post: any }) {
+export function ArticleClient({ post, highlightedPost }: { post: any, highlightedPost?: any }) {
   const { scrollY } = useScroll()
   
   // Parallax effects para o Hero 3D
@@ -260,13 +261,15 @@ export function ArticleClient({ post }: { post: any }) {
           {/* =========================================
               SIDEBAR EDITORIAL
               ========================================= */}
-          {(post.showShareSidebar !== false) && (
           <aside className="lg:col-span-4 mt-16 lg:mt-0">
             <div className="sticky top-32">
               <div className="lg:pl-8 lg:border-l border-[var(--surface-border)] h-full">
-                <h3 className="font-sans text-[10px] font-black uppercase tracking-[0.2em] text-[var(--foreground)]/40 mb-8 border-b border-[var(--surface-border)] pb-4">
-                  {post.shareTitle !== undefined ? post.shareTitle : "Share"}
-                </h3>
+                
+                {(post.showShareSidebar !== false) && (
+                  <>
+                    <h3 className="font-sans text-[10px] font-black uppercase tracking-[0.2em] text-[var(--foreground)]/40 mb-8 border-b border-[var(--surface-border)] pb-4">
+                      {post.shareTitle !== undefined ? post.shareTitle : "Share"}
+                    </h3>
                 <div className="space-y-10">
                   <p className="text-sm text-[var(--foreground)]/60">{post.shareText !== undefined ? post.shareText : "Did you like the review? Send it to a friend who is unsure where to study."}</p>
                   
@@ -306,10 +309,50 @@ export function ArticleClient({ post }: { post: any }) {
                     </div>
                   )}
                 </div>
+                </>
+                )}
+
+                {/* =========================================
+                    HIGHLIGHTED POST (READ NEXT)
+                    ========================================= */}
+                {highlightedPost && (
+                  <div className={post.showShareSidebar !== false ? "mt-16" : ""}>
+                    <h3 className="font-sans text-[10px] font-black uppercase tracking-[0.2em] text-[var(--foreground)]/40 mb-6 border-b border-[var(--surface-border)] pb-4">
+                      Read Next
+                    </h3>
+                    <Link href={`/analise/${highlightedPost.slug.current}`} className="group block bg-[var(--surface)] border border-[var(--surface-border)] rounded-2xl overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1">
+                      {highlightedPost.heroImage ? (
+                        <div className="w-full aspect-[16/9] relative bg-gray-200">
+                          <Image 
+                            src={urlForImage(highlightedPost.heroImage).url()} 
+                            alt={highlightedPost.title} 
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          />
+                          <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-white/20">
+                            {highlightedPost.courseOrCollegeName || "Review"}
+                          </div>
+                        </div>
+                      ) : (
+                         <div className="w-full aspect-[16/9] relative bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] flex items-center justify-center p-6 text-center">
+                            <span className="text-white font-bold text-xl drop-shadow-md">{highlightedPost.title}</span>
+                         </div>
+                      )}
+                      <div className="p-5">
+                        <h4 className="text-lg font-bold group-hover:text-[var(--primary)] transition-colors leading-tight mb-2">
+                          {highlightedPost.title}
+                        </h4>
+                      </div>
+                    </Link>
+                    <Link href="/analises" className="mt-6 flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-[var(--surface-border)] text-sm font-bold text-[var(--foreground)]/70 hover:bg-[var(--surface-hover)] hover:text-[var(--primary)] transition-all">
+                      View all articles <ArrowRight size={16} />
+                    </Link>
+                  </div>
+                )}
+
               </div>
             </div>
           </aside>
-          )}
         </div>
       </main>
 

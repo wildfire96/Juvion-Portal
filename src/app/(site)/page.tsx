@@ -35,7 +35,7 @@ type Guide = {
 
 export default async function Home() {
   const posts: Post[] = await client.fetch(`
-    *[_type == "post"] | order(publishedAt desc) {
+    *[_type == "post"] | order(publishedAt desc)[0...3] {
       _id,
       title,
       slug,
@@ -83,6 +83,9 @@ export default async function Home() {
         <section id="analises" className="max-w-7xl mx-auto px-4 md:px-10 mt-32 mb-20 scroll-mt-32">
           <div className="flex items-center justify-between mb-12">
             <h2 className="text-4xl font-black tracking-tight text-[var(--foreground)]">Latest Reviews</h2>
+            <Link href="/analises" className="hidden sm:flex items-center gap-2 text-sm font-bold text-[var(--primary)] hover:underline">
+              View all <ArrowRight size={16} />
+            </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.length > 0 ? posts.map((post, index) => (
