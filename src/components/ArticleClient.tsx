@@ -20,6 +20,26 @@ export function ArticleClient({ post }: { post: any }) {
   const imageY = useTransform(scrollY, [0, 500], [0, -50])
   const opacity = useTransform(scrollY, [0, 400], [1, 0])
 
+  const ptComponents = {
+    types: {
+      image: ({ value }: any) => {
+        if (!value?.asset?._ref) {
+          return null
+        }
+        return (
+          <div className="relative w-full h-[300px] md:h-[450px] my-8 rounded-2xl overflow-hidden shadow-xl border border-[var(--surface-border)]">
+            <Image
+              src={urlForImage(value).url()}
+              alt={value.alt || 'Post image'}
+              fill
+              className="object-cover"
+            />
+          </div>
+        )
+      }
+    }
+  }
+
   return (
     <div className="bg-[var(--background)] min-h-screen">
       <ReadingProgressBar />
@@ -141,42 +161,44 @@ export function ArticleClient({ post }: { post: any }) {
                 ========================================= */}
             <div className="prose prose-lg dark:prose-invert max-w-none font-serif text-[var(--foreground)]/80 leading-[1.8] space-y-8">
               {post.body ? (
-                <PortableText value={post.body} />
+                <PortableText value={post.body} components={ptComponents} />
               ) : (
                 <p>The content of the review will be displayed here.</p>
               )}
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-16 not-prose font-sans">
-                {(post.showProsCons !== false) && post.pros && post.pros.length > 0 && (
-                  <div className="bg-[var(--surface)] border border-[var(--surface-border)] p-8 rounded-3xl shadow-sm relative overflow-hidden group hover:border-green-500/30 transition-colors">
-                    <div className="absolute top-0 left-0 w-full h-1.5 bg-green-500"></div>
-                    <h4 className="text-[11px] text-green-600 dark:text-green-400 mb-6 uppercase font-black tracking-[0.2em]">{post.prosLabel !== undefined ? post.prosLabel : "What shines"}</h4>
-                    <ul className="space-y-6">
-                      {post.pros.map((pro: string, i: number) => (
-                        <li key={i} className="flex items-start gap-4 text-[var(--foreground)]/80 text-sm font-medium leading-relaxed">
-                          <CheckCircle2 className="text-green-500 shrink-0 mt-0.5" size={20} />
-                          {pro}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
+              {(post.showProsCons !== false) && ((post.pros && post.pros.length > 0) || (post.cons && post.cons.length > 0)) && (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-16 not-prose font-sans">
+                  {post.pros && post.pros.length > 0 && (
+                    <div className="bg-[var(--surface)] border border-[var(--surface-border)] p-8 rounded-3xl shadow-sm relative overflow-hidden group hover:border-green-500/30 transition-colors h-full">
+                      <div className="absolute top-0 left-0 w-full h-1.5 bg-green-500"></div>
+                      <h4 className="text-[11px] text-green-600 dark:text-green-400 mb-6 uppercase font-black tracking-[0.2em]">{post.prosLabel !== undefined ? post.prosLabel : "What shines"}</h4>
+                      <ul className="space-y-6">
+                        {post.pros.map((pro: string, i: number) => (
+                          <li key={i} className="flex items-start gap-4 text-[var(--foreground)]/80 text-sm font-medium leading-relaxed">
+                            <CheckCircle2 className="text-green-500 shrink-0 mt-0.5" size={20} />
+                            {pro}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
 
-                {(post.showProsCons !== false) && post.cons && post.cons.length > 0 && (
-                  <div className="bg-[var(--surface)] border border-[var(--surface-border)] p-8 rounded-3xl shadow-sm relative overflow-hidden group hover:border-orange-500/30 transition-colors">
-                    <div className="absolute top-0 left-0 w-full h-1.5 bg-orange-500"></div>
-                    <h4 className="text-[11px] text-orange-600 dark:text-orange-400 mb-6 uppercase font-black tracking-[0.2em]">{post.consLabel !== undefined ? post.consLabel : "Point of attention"}</h4>
-                    <ul className="space-y-6">
-                      {post.cons.map((con: string, i: number) => (
-                        <li key={i} className="flex items-start gap-4 text-[var(--foreground)]/80 text-sm font-medium leading-relaxed">
-                          <AlertCircle className="text-orange-500 shrink-0 mt-0.5" size={20} />
-                          {con}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
+                  {post.cons && post.cons.length > 0 && (
+                    <div className="bg-[var(--surface)] border border-[var(--surface-border)] p-8 rounded-3xl shadow-sm relative overflow-hidden group hover:border-orange-500/30 transition-colors h-full">
+                      <div className="absolute top-0 left-0 w-full h-1.5 bg-orange-500"></div>
+                      <h4 className="text-[11px] text-orange-600 dark:text-orange-400 mb-6 uppercase font-black tracking-[0.2em]">{post.consLabel !== undefined ? post.consLabel : "Point of attention"}</h4>
+                      <ul className="space-y-6">
+                        {post.cons.map((con: string, i: number) => (
+                          <li key={i} className="flex items-start gap-4 text-[var(--foreground)]/80 text-sm font-medium leading-relaxed">
+                            <AlertCircle className="text-orange-500 shrink-0 mt-0.5" size={20} />
+                            {con}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
 
             {/* =========================================
