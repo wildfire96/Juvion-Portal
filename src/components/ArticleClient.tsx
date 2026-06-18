@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import { Header } from "@/components/Header"
 import dynamic from "next/dynamic"
 
@@ -19,6 +20,15 @@ export function ArticleClient({ post }: { post: any }) {
   const textY = useTransform(scrollY, [0, 500], [0, 150])
   const imageY = useTransform(scrollY, [0, 500], [0, -50])
   const opacity = useTransform(scrollY, [0, 400], [1, 0])
+
+  const [currentUrl, setCurrentUrl] = useState("")
+
+  useEffect(() => {
+    setCurrentUrl(window.location.href)
+  }, [])
+
+  const encodedUrl = currentUrl ? encodeURIComponent(currentUrl) : ""
+  const encodedTitle = encodeURIComponent(post.title || "Juvion Review")
 
   const ptComponents = {
     block: {
@@ -253,6 +263,42 @@ export function ArticleClient({ post }: { post: any }) {
                 </h3>
                 <div className="space-y-10">
                   <p className="text-sm text-[var(--foreground)]/60">{post.shareText !== undefined ? post.shareText : "Did you like the review? Send it to a friend who is unsure where to study."}</p>
+                  
+                  {currentUrl && (
+                    <div className="flex flex-wrap gap-3">
+                      {/* WhatsApp */}
+                      <a href={`https://api.whatsapp.com/send?text=${encodedTitle}%20${encodedUrl}`} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[var(--surface-hover)] border border-[var(--surface-border)] flex items-center justify-center text-[var(--foreground)]/70 hover:bg-[#25D366] hover:text-white hover:border-[#25D366] transition-all" title="Share on WhatsApp">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                      </a>
+                      
+                      {/* Facebook */}
+                      <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[var(--surface-hover)] border border-[var(--surface-border)] flex items-center justify-center text-[var(--foreground)]/70 hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2] transition-all" title="Share on Facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                      </a>
+
+                      {/* Twitter / X */}
+                      <a href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[var(--surface-hover)] border border-[var(--surface-border)] flex items-center justify-center text-[var(--foreground)]/70 hover:bg-black hover:text-white hover:border-black dark:hover:bg-white dark:hover:text-black dark:hover:border-white transition-all" title="Share on X">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+                      </a>
+                      
+                      {/* LinkedIn */}
+                      <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[var(--surface-hover)] border border-[var(--surface-border)] flex items-center justify-center text-[var(--foreground)]/70 hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2] transition-all" title="Share on LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                      </a>
+
+                      {/* Instagram */}
+                      <button onClick={() => {
+                        if (navigator.share) {
+                          navigator.share({ title: post.title, url: currentUrl }).catch(() => {})
+                        } else {
+                          navigator.clipboard.writeText(currentUrl)
+                          alert("Link copiado para a área de transferência! Cole no Instagram.")
+                        }
+                      }} className="w-10 h-10 rounded-full bg-[var(--surface-hover)] border border-[var(--surface-border)] flex items-center justify-center text-[var(--foreground)]/70 hover:bg-[#E1306C] hover:text-white hover:border-[#E1306C] transition-all" title="Share on Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
